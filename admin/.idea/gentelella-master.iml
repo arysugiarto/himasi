@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module type="WEB_MODULE" version="4">
+  <component name="DWSettingsProvider">
+    <option name="passwordKey" value="3b8a4104-abe4-41ff-bc9c-495989705606" />
+  </component>
+  <component name="NewModuleRootManager">
+    <content url="file://$MODULE_DIR$" />
+    <orderEntry type="inheritedJdk" />
+    <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="module" module-name="htdocs" />
+    <orderEntry type="module" module-name="Web Developer" />
+  </component>
+</module>
