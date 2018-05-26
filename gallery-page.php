@@ -91,25 +91,16 @@
 <?php
 require_once "admin/pages/lib/koneksi.php";
 $link = connect();
-
-$batas   =6;
-$halaman =@$_GET['halaman'];
-if (empty($halaman)){
-$posisi =0;
-$halaman=1;
-}
-else{
-$posisi =($halaman-1)*$batas;
-}
 ?>
 <?php
-$tampil_galeri = mysqli_query($link,"SELECT * FROM tb_galeri ORDER  BY id_galeri DESC LIMIT  $posisi,$batas");
+$tampil_galeri = mysqli_query($link,"SELECT * FROM tb_galeri ORDER  BY id_galeri DESC ");
 ?>
 <div id="gallery-section">
+
     <div class="image-gradient">
     <?php
-            while ($data_galeri=mysqli_fetch_array($tampil_galeri)){
-    ?>
+    while ($data_galeri=mysqli_fetch_array($tampil_galeri)){
+?>
         <div class="container">
             <div class="row gallery-content gallery">
                 <figure class="col-md-3 effect-ming">
