@@ -9,7 +9,23 @@ session_start();
 if (isset($_SESSION['username'])) {
     include "../lib2/header.php";      
 ?>
-
+<!-- User Account: style can be found in dropdown.less -->
+< <li class="dropdown user user-menu">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            <span class="hidden-xs"><?= $_SESSION['nama']; ?></span>
+                        </a>
+                            <li class="user-footer">
+                                    <a href="login/logout.php" class="btn btn-danger btn-md">Logout <i class="glyphicon glyphicon-log-out"></i></a>
+                            </li>
+                    </li>
+                    <!-- Control Sidebar Toggle Button -->
+                    <li>
+                        <a href="#" data-toggle="control-sidebar"><i class="fa fa-gears"></i></a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
         <!-- Left side column. contains the logo and sidebar -->
         <aside class="main-sidebar">
             <!-- sidebar: style can be found in sidebar.less -->
@@ -17,16 +33,6 @@ if (isset($_SESSION['username'])) {
                 <!-- Sidebar user panel -->
                 <div class="user-panel">
                 </div>
-                <!-- search form -->
-                <form action="#" method="get" class="sidebar-form">
-                    <div class="input-group">
-                        <input type="text" name="q" class="form-control" placeholder="Search...">
-                        <span class="input-group-btn">
-                <button type="submit" name="search" id="search-btn" class="btn btn-flat"><i class="fa fa-search"></i>
-                </button>
-              </span>
-                    </div>
-                </form>
                 <!-- /.search form -->
                 <!-- sidebar menu: : style can be found in sidebar.less -->
                 <ul class="sidebar-menu" data-widget="tree">
@@ -54,7 +60,6 @@ if (isset($_SESSION['username'])) {
                             <li><a href="editors.php"><i class="fa fa-circle-o"></i>Post Artikel</a></li>
                             <li><a href="event.php"><i class="fa fa-circle-o"></i>Post Event</a></li>
                             <li><a href="galeri.php"><i class="fa fa-circle-o"></i>Post Galery</a></li>
-                            <li><a href="tampilan.php"><i class="fa fa-circle-o"></i>Update Tampilan</a></li>
                         </ul>
                     </li>
                     <li class="treeview">
@@ -64,20 +69,16 @@ if (isset($_SESSION['username'])) {
               <i class="fa fa-angle-left pull-right"></i>
             </span>
                         </a>
-                        <<ul class="treeview-menu">
-                            <li><a href="../tables/data.php"><i class="fa fa-circle-o"></i> Data Artikel</a></li>
-                            <li><a href="../tables/data_event.php"><i class="fa fa-circle-o"></i> Data Event</a></li>
-                            <li><a href="../tables/data_galeri.php"><i class="fa fa-circle-o"></i> Data Galeri</a></li>
-                            <li><a href="../tables/data_tampilan.php"><i class="fa fa-circle-o"></i> Data Tampilan</a></li>
-
-                        </ul>
+                    <ul class="treeview-menu">
+                        <li><a href="../tables/data.php"><i class="fa fa-circle-o"></i> Data Artikel</a></li>
+                        <li><a href="../tables/data_event.php"><i class="fa fa-circle-o"></i> Data Event</a></li>
+                        <li><a href="../tables/data_galeri.php"><i class="fa fa-circle-o"></i> Data Galeri</a></li>
+                    </ul>
                     </li>
                 </ul>
             </section>
             <!-- /.sidebar -->
         </aside>
-
-
         <!-- Content Wrapper. Contains page content -->
         <div class="content-wrapper">
             <!-- Content Header (Page header) -->
