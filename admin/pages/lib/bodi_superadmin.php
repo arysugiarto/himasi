@@ -1,3 +1,6 @@
+
+<body>
+
 <!-- Left side column. contains the logo and sidebar -->
 <aside class="main-sidebar">
         <!-- sidebar: style can be found in sidebar.less -->
@@ -48,21 +51,11 @@
                         <li><a href="pages/tables/data_event.php"><i class="fa fa-circle-o"></i> Data Event</a></li>
                         <li><a href="pages/tables/data_galeri.php"><i class="fa fa-circle-o"></i> Data Galeri</a></li>
                         <li><a href="pages/tables/data_tampilan.php"><i class="fa fa-circle-o"></i> Data Tampilan</a></li>
+                        <li><a href=""><i class="fa fa-circle-o"></i>Daftar Admin</a></li>
                     </ul>
                 </li>
-
-                <li class="treeview">
-                    <a href="#">
-                        <i class="glyphicon glyphicon-wrench"></i> <span>Admin Management</span>
-               <span class="pull-right-container">
-                        <i class="fa fa-angle-left pull-right"></i>
                </span>
                     </a>
-                    <ul class="treeview-menu">
-                        <li><a href="pages/forms/editors.php"><i class="fa fa-circle-o"></i>Tambah Admin</a></li>
-                        <li><a href="pages/forms/event.php"><i class="fa fa-circle-o"></i>Daftar Admin</a></li>
-                    </ul>
-                </li>
             </ul>
         </section>
         <!-- /.sidebar -->
@@ -70,12 +63,14 @@
 
     <!-- Content Wrapper. Contains page content -->
     <div class="content-wrapper">
+    
         <!-- Content Header (Page header) -->
         <section class="content-header">
             <h1>
                 Dashboard
                 <small>Control panel</small>
-            </h1>
+            </h1><br>
+            <button type="button" class="btn btn-info btn-sm" id="myBtn"><i class="glyphicon glyphicon-plus"></i> Tambah Admin</button>
             <ol class="breadcrumb">
                 <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
                 <li class="active">Dashboard</li>
@@ -106,7 +101,6 @@
                     <div class="small-box bg-green">
                         <div class="inner">
                             <h3>53<sup style="font-size: 20px">%</sup></h3>
-
                             <p>Bounce Rate</p>
                         </div>
                         <div class="icon">
@@ -147,13 +141,86 @@
                 </div>
                 <!-- ./col -->
             </div>
-            <!--script chat-->
-          <!--  <script id="cid0020000173018569264" data-cfasync="false" async src="//st.chatango.com/js/gz/emb.js" style="width: 1095px;height: 350px;">
-                {"handle":"desacikangkung","arch":"js","styles":{"a":"0084ef","b":100,"c":"FFFFFF","d":"FFFFFF","k":"0084ef","l":"0084ef","m":"0084ef","n":"FFFFFF","p":"10","q":"0084ef","r":100,"fwtickm":1}}
-            </script>
+        </div>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<style>
+  .modal-header, h4, .close {
+      background-color: #5cb85c;
+      color:white !important;
+      text-align: center;
+      font-size: 30px;
+  }
+  .modal-footer {
+      background-color: #f9f9f9;
+  }
+  </style>
+ <?php
+require_once 'koneksi.php';
+$link=connect();
 
-            <div class="row">
-                </section>
-                <!-- /.content -->
+if(isset($_POST['kirim'])){
 
-                </div>
+
+$nama=$_POST['nama'];
+$username=$_POST['username'];
+$password=$_POST['password'];
+
+$insert = "INSERT INTO tb_admin(id_admin,Nama,Username,Password,level) values('','$nama','$username','$password','2')";
+$kirim = mysqli_query($link, $insert);
+if ($kirim){
+    echo "<script>alert('berhasil cuuuu');</script>";
+    header("location:index.php");
+    
+}
+else{
+    header("location:index.php");
+}
+}
+?>
+
+        !-- Modal -->
+<div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header" style="padding:35px 50px;">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4><span class="glyphicon glyphicon-edit"></span>Tambah Admin</h4>
+        </div>
+        <div class="modal-body" style="padding:40px 50px;">
+         <form action='' method="post">
+         
+          <div class="form-group">
+              <label for="usrname"><span class="glyphicon glyphicon-credit-card"></span> Nama</label>
+              <input type="text" class="form-control" id="nama" name="nama" placeholder="Enter Nama">
+            </div>
+            <div class="form-group">
+              <label for="usrname"><span class="glyphicon glyphicon-user"></span> Username</label>
+              <input type="text" class="form-control" name="username" id="usrname" placeholder="Enter email">
+            </div>
+            <div class="form-group">
+              <label for="psw"><span class="glyphicon glyphicon-eye-open"></span> Password</label>
+              <input type="password" class="form-control" name="password" id="psw" placeholder="Enter password">
+            </div>
+              <button type="submit" name="kirim" class="btn btn-success btn-block"><span class="glyphicon glyphicon-plus"></span> Tambah</button>
+        </form>
+        </div>
+        <div class="modal-footer">
+          <button type="submit" class="btn btn-danger btn-default pull-left" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span> Cancel</button>
+        </div>
+      </div>
+      
+    </div>
+  </div> 
+</div>
+<script>
+$(document).ready(function(){
+    $("#myBtn").click(function(){
+        $("#myModal").modal();
+    });
+});
+</script>

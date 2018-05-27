@@ -93,9 +93,7 @@ $id =$_GET['Id'];
 </div> <!-- end -->
 
 <?php
-$tampil_artikel  = mysqli_query($link,"SELECT * FROM tb_artikel WHERE id_artikel='$id' ");
-mysqli_query ($link, "UPDATE tb_artikel SET views = views + 1 WHERE id_artikel='$id' ");
-$popular        = mysqli_query($link,"SELECT * FROM tb_artikel WHERE views DESC");
+$tampil_artikel  = mysqli_query($link,"SELECT  tb_artikel.*, tb_admin.Nama FROM tb_artikel JOIN tb_admin ON tb_artikel.id_admin=tb_admin.id_admin WHERE id_artikel='$id' ");
 ?>
 <section id="article-section">
     <div class="container">
@@ -114,7 +112,14 @@ $popular        = mysqli_query($link,"SELECT * FROM tb_artikel WHERE views DESC"
 					        	187</span>
                       </div>
                     </div>
-
+                    <div class="post-footer">
+                            <div class="photo-admin">
+                                <i class="glyphicon glyphicon-user"></i>
+                            </div>
+                            <div class="nama-admin">
+                                <?= $data_artikel['Nama'] ?>
+                            </div>
+                        </div>
                     <div class="deskripsi deskripsi-2">
                         <!--<p><p>Salam Mahasiswa !!&nbsp;</p>-->
                         <p><?php echo  $data_artikel['isi_artikel'] ?></p>

@@ -95,24 +95,29 @@ $link = connect();
 <?php
 $tampil_galeri = mysqli_query($link,"SELECT * FROM tb_galeri ORDER  BY id_galeri DESC ");
 ?>
-<div id="gallery-section">
 
+<div id="gallery-section">
+<div class="container">
     <div class="image-gradient">
-    <?php
-    while ($data_galeri=mysqli_fetch_array($tampil_galeri)){
-?>
+  
         <div class="container">
             <div class="row gallery-content gallery">
+            <?php
+            while ($data_galeri=mysqli_fetch_array($tampil_galeri)){
+            ?>
                 <figure class="col-md-3 effect-ming">
                     <a href="admin/pages/forms/img/img_galeri/<?php echo $data_galeri['gambar_galeri'] ?>" class="thumbnail" >
                         <img src="admin/pages/forms/img/img_galeri/<?php echo $data_galeri['gambar_galeri'] ?>" alt="dalih">
                     </a>
                 </figure>
+                <?php } ?>
             </div>
+            
         </div>
     </div>
 </div>
- <?php } ?>
+</div>
+
  <footer>
     <div class="gradient">
         <div class="container wow fadeIn">

@@ -1,3 +1,9 @@
+<?php
+    session_start();
+    require_once "koneksi.php";
+    $link = connect();
+    if (isset($_SESSION['username'])) {
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -37,6 +43,8 @@
 
     <!-- Google Font -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
+
+  
 </head>
 <body class="hold-transition skin-blue sidebar-mini">
 <div class="wrapper">
@@ -127,13 +135,11 @@
                     <!-- User Account: style can be found in dropdown.less -->
                     <li class="dropdown user user-menu">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                            <span class="hidden-xs">Alexander Pierce</span>
+                            <span class="hidden-xs"><?= $_SESSION['nama']; ?></span>
                         </a>
-                        <ul class="dropdown-menu">
                             <li class="user-footer">
-                                    <a href="login/logout.php" class="btn btn-default btn-flat">Logout</a>
+                                    <a href="login/logout.php" class="btn btn-danger btn-md">Logout <i class="glyphicon glyphicon-log-out"></i></a>
                             </li>
-                        </ul>
                     </li>
                     <!-- Control Sidebar Toggle Button -->
                     <li>
@@ -143,3 +149,13 @@
             </div>
         </nav>
     </header>
+    <?php
+} else {
+    ?>
+    <script>
+        alert('Silakan login dulu!');
+        parent.location.href="login/index.php"
+    </script>
+    <?php
+}
+?>

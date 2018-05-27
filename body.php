@@ -20,11 +20,8 @@ $tampil = mysqli_query($link,"SELECT * FROM tb_tampilan");
         <div class="container">
 
             <div class="himaheader-inner">
-              <?php
-              while ($data = mysqli_fetch_array ($tampil)){ ?>
-                <h1 class="wow bounceIn" data-wow-delay=".2s"><?php echo $data['font']?></h1>
-                <h2 class="wow bounceIn" data-wow-delay=".3s"><?php echo $data['univ']?></h2>
-                <?php }?>
+                <h1 class="wow bounceIn" data-wow-delay=".2s"></h2>
+                <h2 class="wow bounceIn" data-wow-delay=".3s"></h2>
                 <a href="" type="button" class="btn btn-default wow bounceIn" data-wow-delay=".4s">tentang</a>
                 <div class="arrow animated infinite fadeInDown">
                     <img src="assets/image/download.png" width="30">
@@ -36,8 +33,8 @@ $tampil = mysqli_query($link,"SELECT * FROM tb_tampilan");
 </div>
 <!-- end header -->
 <br>
-            </div>
-        <div class="media-container-row" >
+</div>
+        <div class="media-container-row" id="tentang">
             <div class="title col-0 col-md-0">
                 <center>
                 <h1>Tentang</h1>

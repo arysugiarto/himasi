@@ -104,7 +104,7 @@ $posisi =($halaman-1)*$batas;
 }
 ?>
 <?php
-$tampil_artikel = mysqli_query($link,"SELECT * FROM tb_artikel ORDER  BY id_artikel DESC LIMIT  $posisi,$batas");
+$tampil_artikel = mysqli_query($link,"SELECT tb_artikel.*, tb_admin.Nama FROM tb_artikel JOIN tb_admin ON tb_artikel.id_admin=tb_admin.id_admin ORDER  BY id_artikel DESC LIMIT  $posisi,$batas");
 ?>
 <div class="post-section">
     <div class="container">
@@ -129,10 +129,10 @@ $tampil_artikel = mysqli_query($link,"SELECT * FROM tb_artikel ORDER  BY id_arti
                         </div>
                         <div class="post-footer">
                             <div class="photo-admin">
-                                <img src="assets/image/" class="img-admin" width="15" height="15">
+                                <i class="glyphicon glyphicon-user"></i>
                             </div>
                             <div class="nama-admin">
-                                <a href="#" class="name"></a>
+                                <a href="#" class="name"><?= $data_artikel['Nama'] ?></a>
                             </div>
                         </div>
                     </div>
