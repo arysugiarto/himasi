@@ -122,7 +122,6 @@ $tampil_event = mysqli_query($link,"SELECT * FROM tb_event ORDER BY id_event DES
                         <a href="#"><img src="admin/pages/forms/img/img_artikel/<?php  echo $data_artikel['gambar_artikel']?>" alt="dalih" class="blog-image" ></a>
                         <div class="caption">
                             <a href=""><span class="label" style="background-color: #13CE66; border-radius: 0; border-bottom-right-radius: .50em; padding: 3px 8px;"><?= $data_artikel['kategori']?></span></a>
-                              <a href=""><span class="label" style="background-color: #13CE66; border-radius: 0; border-bottom-right-radius: .50em; padding: 3px 8px;"><?= $data_artikel['kategori_2']?></span></a><br>
                             <a href="article-page.php?Id=<?php echo $data_artikel["id_artikel"] ?>" class="blog-title"><?php  echo $data_artikel['judul_artikel']?></a>
                             <div class="tgl-posting">
                                 <div class="date">
