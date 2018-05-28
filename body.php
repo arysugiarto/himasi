@@ -37,7 +37,7 @@ $tampil = mysqli_query($link,"SELECT * FROM tb_tampilan");
         <div class="media-container-row" id="tentang">
             <div class="title col-0 col-md-0">
                 <center>
-                <h1>Tentang</h1>
+                <h1>TENTANG</h1>
                 <br><br>
                 <div class="visi"><br>
                 <h3>Visi</h3>
@@ -184,19 +184,54 @@ $tampil_event = mysqli_query($link,"SELECT * FROM tb_event ORDER BY id_event DES
         </div>
     </div>
 
+    <?php
+require_once "admin/pages/lib/koneksi.php";
+$link = connect();
+?>
+<?php
+$tampil_galeri = mysqli_query($link,"SELECT * FROM tb_galeri ORDER  BY id_galeri DESC ");
+?>
+
+<div id="gallery-section">
+<div class="container">
+<center>
+<h2 class="warna">Gallery</h2>
+</center>
+    <div class="">
+        <div class="container">
+       
+            <div class="row gallery-content gallery">
+            <?php
+            while ($data_galeri=mysqli_fetch_array($tampil_galeri)){
+            ?>
+                <figure class="col-md-2 effect-ming">
+                    <a href="admin/pages/forms/img/img_galeri/<?php echo $data_galeri['gambar_galeri'] ?>" class="thumbnail" >
+                        <img src="admin/pages/forms/img/img_galeri/<?php echo $data_galeri['gambar_galeri'] ?>" alt="dalih">
+                    </a>
+                </figure>
+                <?php } ?>
+            </div>
+            
+        </div>
+    </div>
+</div>
+</div>
+
     <!-- ini bagian kesan pesan kang kade ulah poho -->
                 <div class="row contact wow fadeIn">
                     <div class="col-md-8">
                     <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4162.276649979676!2d106.5589946636075!3d-7.338776599240823!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e6802f5286f60b9%3A0x13007a76135d689e!2sMan+3+Sukabumi!5e0!3m2!1sid!2sid!4v1527155354093" width="500" height="350" frameborder="0" style="border:0" allowfullscreen></iframe>
                     </div>
                     <div class="col-md-4 contact-info">
-                        <h3>Informasi Kontak</h2>
-                        <ul><h3>
-                            <li>Jl. Lapang Lodaya Setra No. 47, Citanglar, Surade</li>
-                            <li>+858 - 6142 - 6590</li>
-                            <li>man3sukabumi@gmail.com</li>
-                            </h3>
-                        </ul>
+                        <h3>Informasi Kontak</h3>
+                        <h4>
+                        <button type="button" class="btn btn-info btn-fb" width:15px;><i class="fa fa-facebook pr-1"></i></button>
+                        <span class="name-social youtube-hover"> Keluarga Besar MAN 3 Sukabumi</span><br><br>
+                        <button type="button" class="btn btn-danger btn-fb"  width:15px;><i class="fa fa-envelope pr-1"></i> </button> 
+                        <span class="name-social youtube-hover"> man3sukabumi@gmail.com</span><br><br>
+                        <button type="button" class="btn btn-purple btn-fb"  width:15px;><i class="fa fa-instagram pr-1"></i> </button> 
+                        <span class="name-social youtube-hover"> @man3sukabumi</span><br><br>
+                        </h4>
                     </div>
                 </div>
             </div>

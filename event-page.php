@@ -49,11 +49,7 @@
             <ul class="nav navbar-nav navbar-right">
                 <li><a href="index.php">home</a></li>
                 <li class="dropdown">
-                    <a href="#" >tentang <span class="caret"></span></a>
-                    <ul class="dropdown-menu animated fadeIn">
-                        <li><a href="#">sejarah</a></li>
-                        <li><a href="#">visi - misi</a></li>
-                    </ul>
+                    <a href="#" >tentang </a>
                 </li>
                 <li class="dropdown">
                 <a href="gallery-page.php" >gallery </a>
@@ -84,7 +80,7 @@
     <div class="container">
         <ol class="breadcrumb">
             <li><a href="#">Home</a></li>
-            <li class="active">Acara Hima SI</li>
+            <li class="active">Acara MAN 3 Sukabumi</li>
         </ol>
     </div>
 </div> <!-- end -->

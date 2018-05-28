@@ -3,11 +3,8 @@
  * Created by PhpStorm.
  * User: Ary Sugiarto
  * Date: 03/07/18
- * Time: 06:17
+ * Time: 06:19
  */
- require_once 'admin/pages/lib/koneksi.php';
- $link = connect();
- $id = $_GET['id'];
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -48,7 +45,8 @@
             <a class="navbar-hima" href="index.php"><img src="assets/image/logoman.png" width="50">MAN 3 Sukabumi</a>
         </div>
 
-       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav navbar-right">
                 <li><a href="index.php">home</a></li>
                 <li class="dropdown">
@@ -66,12 +64,11 @@
 </nav>
 
 
-
 <div class="hima-header-2 wow fadeIn visi">
     <div class="image-gradient-2">
         <div class="container">
             <div class="himaheader-inner-2">
-                <h3>Event</h3>
+                <h3>Tentang MAN 3 Sukabumi</h3>
             </div>
         </div>
     </div>
@@ -83,69 +80,47 @@
     <div class="container">
         <ol class="breadcrumb">
             <li><a href="#">Home</a></li>
-            <li><a href="#">Acara MAN 3 Sukabumi</a></li>
-            <li class="active">Detail Acara </li>
+            <li class="active">Gallery</li>
         </ol>
     </div>
 </div> <!-- end -->
 <?php
-$tampil_event = mysqli_query($link,"SELECT * FROM tb_event WHERE id_event='$id'");
+/*require_once "admin/pages/lib/koneksi.php";
+$link = connect();
+?>
+<?php
+$tampil_galeri = mysqli_query($link,"SELECT * FROM tb_galeri ORDER  BY id_galeri DESC ");*/
 ?>
 
-<div id="events-detail">
-    <div class="container events-detail-inner">
-      <?php
-      while ($data_event = mysqli_fetch_array ($tampil_event)){ ?>
-        <div class="row">
-            <div class="col-xs-12 col-md-8">
-                <div class="event-poster thumbnail">
-                    <img src="admin/pages/forms/img/img_event/<?= $data_event['gambar_event']?>" alt="dalih" class="blog-image">
+<div id="gallery-section">
+<div class="container">
+    <div class="">
+  
+    <div class="media-container-row" id="tentang">
+            <div class="title col-0 col-md-0">
+                <center>
+                <div class=""><br>
+                <h3>Visi</h3>
+                <h4>“Terwujudnya Warga Madrasah yang unggul dalam Imtaq, berwasasan Iptek, Berdaya Saing dan Menjadi Pilihan Umat”</h4>
+                <br>
+                <h3>Misi</h3>
+                <h4>
+                 Meningkatkan Kualitas Pendidikan Pengetahuan Agama Islam dan Wawasan Keislaman<br><br>
+                 Meningkatkan Kualitas Pendidikan Pengetahuan Umum<br><br>
+                 Meningkatkan Kualitas Kinerja Tenaga Pendidik dan Tenaga Kependidikan<br><br>
+                 Meningkatkan Kualitas Sarana dan Prasarana Pendidikan<br><br>
+                 Meningkatkan Kualitas Pelayanan Administrasi secara Profesional<br><br>
+                 Meningkatkan Kualitas hubungan dengan masyarakat<br><br>
+                </h4><br>
                 </div>
-            </div>
-
-            <div class="col-xs-12 col-md-4 garis">
-                <div class="detail-info">
-                    <h5><span class="tgl-besar"><?= $data_event['tanggal_event']?> </span></h5>
-                    <h2><?= $data_event['judul_event']?></h2>
-                    <h5>by <?= $data_event['penyelenggara'] ?></h5>
-                    <div class="price"><?= $data_event['sifat'] ?></div>
-                    <div class="daftar-event">
-                        <button type="button" class="btn btn-success" style="width: 100%;" id="myBtn">Daftar</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-xs-12 col-md-8">
-                <div class="deskripsi">
-                    <h3 class="label-primary-1">DESCKRIPSI</h3>
-                    <P><STRONG>Jadwal:</STRONG><BR><?= $data_event['tanggal_event']?>, <!--18:00 - 21:00 WIB--><BR><?= $data_event['tempat_event']?></P>
-                    <P><STRONG>Tiket:</STRONG><BR>Rp <?= $data_event['harga_tiket']?></P>
-                    <P><STRONG></STRONG></P>
-                    <P<?= $data_event['artikel_event']?></P>
-                    <!--<P>- Laptop<BR>- Install R dan R Studio<BR></P>
-                    <P><BR></P>
-                    <P><STRONG>Hubungi kami:</STRONG><BR><SPAN>info@datasciencebandung.com</SPAN></P>-->
-                </div>
-            </div>
-            <div class="col-xs-12 col-md-4">
-                <div class="deskripsi keterangan">
-                    <h3 class="label-primary-1">Date and Time</h3>
-                    <p><?= $data_event['tanggal_event']?></p>
-                    <p><?= $data_event['waktu'] ?> sd <?= $data_event['waktu_selesai'] ?> </p>
-                    <br><br>
-                    <h3 class="label-primary-1">Location</h3>
-                    <p><?= $data_event['tempat_event']?></p>
-                    <br><br>
-                    <h3 class="label-primary-1">More Info</h3>
-                    <a href="#"><i class="fa fa-facebook"></i> Keluarga Besa MAN 3 Sukabumi</a> <br>
-                    <a href="#"><i class="fa fa-instagram"></i> man3sukabumi</a>
-                </div>
+              </center>
             </div>
         </div>
-      <?php } ?>
     </div>
 </div>
+</div>
 
-<footer>
+ <footer>
     <div class="gradient">
         <div class="container wow fadeIn">
             <div class="row">
@@ -160,6 +135,7 @@ $tampil_event = mysqli_query($link,"SELECT * FROM tb_event WHERE id_event='$id'"
                     <ul>
                         <li class="head-list">Tentang</li>
                         <li><a href="">Sejarah</a></li>
+                        <li><a href="">Ketua Hima</a></li>
                         <li><a href="">Visi Misi</a></li>
                     </ul>
                 </div>
@@ -239,85 +215,6 @@ $tampil_event = mysqli_query($link,"SELECT * FROM tb_event WHERE id_event='$id'"
             }
         }
     );
-</script>
-
-<meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-<style>
-  .modal-header, h4, .close {
-      background-color: #5cb85c;
-      color:white !important;
-      text-align: center;
-      font-size: 30px;
-  }
-  .modal-footer {
-      background-color: #f9f9f9;
-  }
-  </style>
- <?php
-/*require_once 'admin/pages/lib/koneksi.php';
-$link=connect();
-
-if(isset($_POST['kirim'])){
-
-
-$nama=$_POST['nama'];
-$username=$_POST['username'];
-$password=$_POST['password'];
-
-$insert = "INSERT INTO tb_admin(id_admin,Nama,Username,Password,level) values('','$nama','$username','$password','2')";
-$kirim = mysqli_query($link, $insert);
-if ($kirim){
-    echo "<script>alert('berhasil cuuuu');</script>";
-    header("location:index.php");
-    
-}
-else{
-    header("location:index.php");
-}
-}*/
-?>
-
-<div class="modal fade" id="myModal" role="dialog">
-    <div class="modal-dialog">
-    
-      <!-- Modal content-->
-      <div class="modal-content">
-        <div class="modal-header" style="padding:35px 50px;">
-          <button type="button" class="close" data-dismiss="modal">&times;</button>
-          <h4><span class="glyphicon glyphicon-edit"></span>Daftar Event</h4>
-        </div>
-        <div class="modal-body" style="padding:40px 50px;">
-         <form action='' method="post">
-         
-          <div class="form-group">
-              <label for="usrname"><span class="glyphicon glyphicon-user"></span> Nama</label>
-              <input type="text" class="form-control" id="nama" name="nama" placeholder="Enter Nama">
-            </div>
-            <div class="form-group">
-              <label for="usrname"><span class="glyphicon glyphicon-home"></span> Kelas</label>
-              <input type="text" class="form-control" name="username" id="usrname" placeholder="Enter email">
-            </div>
-            <div class="form-group">
-              <label for="psw"><span class="fa fa-university"></span> Asal Sekolah</label>
-              <input type="text" class="form-control" name="password" id="psw" placeholder="Enter password">
-            </div>
-              <button type="submit" name="kirim" class="btn btn-success btn-block">Daftar</button>
-        </form>
-        </div>
-      </div>
-      
-    </div>
-  </div> 
-</div>
-<script>
-$(document).ready(function(){
-    $("#myBtn").click(function(){
-        $("#myModal").modal();
-    });
-});
 </script>
 </body>
 </html>

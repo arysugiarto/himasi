@@ -50,14 +50,10 @@
             <ul class="nav navbar-nav navbar-right">
                 <li><a href="index.php">home</a></li>
                 <li class="dropdown">
-                    <a href="#" >tentang <span class="caret"></span></a>
-                    <ul class="dropdown-menu animated fadeIn">
-                        <li><a href="#">sejarah</a></li>
-                        <li><a href="#">visi - misi</a></li>
-                    </ul>
+                    <a href="#" >tentang </a>
                 </li>
                 <li class="dropdown">
-                    <a href="gallery-page.php" >gallery </a>
+                <a href="gallery-page.php" >gallery </a>
                 </li>
                 <li><a href="#">kontak</a></li>
                 <li><a href="event-page.php">events</a></li>

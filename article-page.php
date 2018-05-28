@@ -48,16 +48,11 @@ $id =$_GET['Id'];
             <a class="navbar-hima" href="index.php"><img src="assets/image/logoman.png" width="50">MAN 3 Sukabumi</a>
         </div>
 
-        <!-- Collect the nav links, forms, and other content for toggling -->
-        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav navbar-right">
                 <li><a href="index.php">home</a></li>
                 <li class="dropdown">
-                    <a href="#" >tentang <span class="caret"></span></a>
-                    <ul class="dropdown-menu animated fadeIn">
-                        <li><a href="#">sejarah</a></li>
-                        <li><a href="#">visi - misi</a></li>
-                    </ul>
+                    <a href="#" >tentang </a>
                 </li>
                 <li class="dropdown">
                 <a href="gallery-page.php" >gallery </a>
