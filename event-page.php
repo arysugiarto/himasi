@@ -68,7 +68,7 @@
 
 
 
-<div class="hima-header-2 wow fadeIn">
+<div class="hima-header-2 wow fadeIn visi">
     <div class="image-gradient-2">
         <div class="container">
             <div class="himaheader-inner-2">

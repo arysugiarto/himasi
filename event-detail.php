@@ -7,7 +7,7 @@
  */
  require_once 'admin/pages/lib/koneksi.php';
  $link = connect();
-$id = $_GET['id'];
+ $id = $_GET['id'];
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -72,7 +72,7 @@ $id = $_GET['id'];
 
 
 
-<div class="hima-header-2 wow fadeIn">
+<div class="hima-header-2 wow fadeIn visi">
     <div class="image-gradient-2">
         <div class="container">
             <div class="himaheader-inner-2">
@@ -165,7 +165,6 @@ $tampil_event = mysqli_query($link,"SELECT * FROM tb_event WHERE id_event='$id'"
                     <ul>
                         <li class="head-list">Tentang</li>
                         <li><a href="">Sejarah</a></li>
-                        <li><a href="">Ketua Hima</a></li>
                         <li><a href="">Visi Misi</a></li>
                     </ul>
                 </div>
@@ -312,9 +311,6 @@ else{
             </div>
               <button type="submit" name="kirim" class="btn btn-success btn-block">Daftar</button>
         </form>
-        </div>
-        <div class="modal-footer">
-          <button type="submit" class="btn btn-danger btn-default pull-left" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span> Cancel</button>
         </div>
       </div>
       

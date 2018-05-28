@@ -20,9 +20,9 @@ $tampil = mysqli_query($link,"SELECT * FROM tb_tampilan");
         <div class="container">
 
             <div class="himaheader-inner">
-                <h1 class="wow bounceIn" data-wow-delay=".2s"></h2>
-                <h2 class="wow bounceIn" data-wow-delay=".3s"></h2>
-                <a href="" type="button" class="btn btn-default wow bounceIn" data-wow-delay=".4s">tentang</a>
+                <h1 class="wow bounceIn" data-wow-delay=".2s">MADRASAH ALIYAH NEGERI 3 KABUPATEN SUKABUMI</h2>
+                <h2 class="wow bounceIn" data-wow-delay=".3s">"Madrasah lebih baik lebih baik Madrasah"</h2>
+                <a href="" type="button" class="btn btn-default wow bounceIn" data-wow-delay=".4s">Selanjutnya</a>
                 <div class="arrow animated infinite fadeInDown">
                     <img src="assets/image/download.png" width="30">
                 </div>
@@ -39,23 +39,24 @@ $tampil = mysqli_query($link,"SELECT * FROM tb_tampilan");
                 <center>
                 <h1>Tentang</h1>
                 <br><br>
-                <div class="visi">
-                <h4>Visi</h4>
-                <h5>“Terwujudnya Warga Madrasah yang unggul dalam Imtaq, berwasasan Iptek, Berdaya Saing dan Menjadi Pilihan Umat”</h5>
+                <div class="visi"><br>
+                <h3>Visi</h3>
+                <h4>“Terwujudnya Warga Madrasah yang unggul dalam Imtaq, berwasasan Iptek, Berdaya Saing dan Menjadi Pilihan Umat”</h4>
                 <br>
-                <h4>Misi</h4>
-                <h5>
+                <h3>Misi</h3>
+                <h4>
                  Meningkatkan Kualitas Pendidikan Pengetahuan Agama Islam dan Wawasan Keislaman<br><br>
                  Meningkatkan Kualitas Pendidikan Pengetahuan Umum<br><br>
                  Meningkatkan Kualitas Kinerja Tenaga Pendidik dan Tenaga Kependidikan<br><br>
                  Meningkatkan Kualitas Sarana dan Prasarana Pendidikan<br><br>
                  Meningkatkan Kualitas Pelayanan Administrasi secara Profesional<br><br>
                  Meningkatkan Kualitas hubungan dengan masyarakat<br><br>
-                </h5>
+                </h4><br>
                 </div>
               </center>
             </div>
         </div>
+        <br>
 <?php
 $tampil_event = mysqli_query($link,"SELECT * FROM tb_event ORDER BY id_event DESC LIMIT 3");
 ?>

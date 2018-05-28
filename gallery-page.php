@@ -68,7 +68,7 @@
 </nav>
 
 
-<div class="hima-header-2 wow fadeIn">
+<div class="hima-header-2 wow fadeIn visi">
     <div class="image-gradient-2">
         <div class="container">
             <div class="himaheader-inner-2">
@@ -98,7 +98,7 @@ $tampil_galeri = mysqli_query($link,"SELECT * FROM tb_galeri ORDER  BY id_galeri
 
 <div id="gallery-section">
 <div class="container">
-    <div class="image-gradient">
+    <div class="">
   
         <div class="container">
             <div class="row gallery-content gallery">
