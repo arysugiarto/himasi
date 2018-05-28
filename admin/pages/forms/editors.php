@@ -136,8 +136,8 @@ if (isset($_SESSION['username'])) {
                                       <td>
                                         <label>Kategori</label>
                                         <br>
-                                            <input size="30" type="checkbox" name="pendidikan" value="Pendidikan">pendidikan
-                                            <input size="30" type="checkbox" name="berita" value="berita">Berita
+                                            <input size="30" type="radio" name="kategori" value="Pendidikan">pendidikan
+                                            <input size="30" type="radio" name="kategori" value="berita">Berita
                                         <!--<select class="form-control" name="kategori">
                                           <option value="pendidikan">Pendidikan</option>
                                           <option value="berita">Berita</option>
@@ -149,7 +149,6 @@ if (isset($_SESSION['username'])) {
                                 <textarea id="summernote" name="artikel" rows="10" cols="80"></textarea>
                                 <br>
                                 <button type="submit"  class="btn btn-flat"><i class="fa fa-send"></i>Send</button>
-
                             </form>
                         </div>
                         <div>
