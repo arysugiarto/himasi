@@ -19,7 +19,7 @@ if (isset($_SESSION['username'])) {
                             <span class="hidden-xs"><?= $_SESSION['nama']; ?></span>
                         </a>
                             <li class="user-footer">
-                                    <a href="login/logout.php" class="btn btn-danger btn-md">Logout <i class="glyphicon glyphicon-log-out"></i></a>
+                            <a href="../../login/logout.php" class="btn btn-danger btn-md">Logout <i class="glyphicon glyphicon-log-out"></i></a>
                             </li>
                     </li>
                     <!-- Control Sidebar Toggle Button -->

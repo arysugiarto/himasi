@@ -141,8 +141,8 @@ $tampil_event = mysqli_query($link,"SELECT * FROM tb_event WHERE id_event='$id'"
                     <p><?= $data_event['tempat_event']?></p>
                     <br><br>
                     <h3 class="label-primary-1">More Info</h3>
-                    <a href="#"><i class="fa fa-facebook"></i> Hima Si</a> <br>
-                    <a href="#"><i class="fa fa-instagram"></i> Hima Si</a>
+                    <a href="#"><i class="fa fa-facebook"></i> Keluarga Besa MAN 3 Sukabumi</a> <br>
+                    <a href="#"><i class="fa fa-instagram"></i> man3sukabumi</a>
                 </div>
             </div>
         </div>
