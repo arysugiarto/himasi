@@ -18,7 +18,7 @@ if (isset($_SESSION['username'])) {
                             <span class="hidden-xs"><?= $_SESSION['nama']; ?></span>
                         </a>
                             <li class="user-footer">
-                                    <a href="login/logout.php" class="btn btn-danger btn-md">Logout <i class="glyphicon glyphicon-log-out"></i></a>
+                            <a href="../../login/logout.php" class="btn btn-danger btn-md">Logout <i class="glyphicon glyphicon-log-out"></i></a>
                             </li>
                     </li>
                     <!-- Control Sidebar Toggle Button -->
@@ -118,7 +118,7 @@ if (isset($_SESSION['username'])) {
                                 </div>
                                 <!-- /. tools -->
                             </div>
-                            <?php $tampil_artikel=mysqli_query($link,"SELECT * FROM tb_artikel WHERE id_artikel='$id' "); ?>
+                            <?php $tampil_artikel = mysqli_query($link, "SELECT * FROM tb_artikel WHERE id_artikel='$id' "); ?>
                             <!-- /.box-header -->
                             <div class="box-body pad">
                                 <form action="update_artikel.php" method="post" enctype="multipart/form-data">
@@ -140,7 +140,6 @@ if (isset($_SESSION['username'])) {
                                                 <label>Kategori</label>
                                                 <br>
                                                 <input size="30" type="checkbox" name="pendidikan" value="<?php  echo $data_artikel['kategori'] ?>">pendidikan
-                                                <input size="30" type="checkbox" name="berita" value="<?php echo $data_artikel['kategori_2'] ?>">Berita
                                             </td>
                                         </tr>
                                     </table>

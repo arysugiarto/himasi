@@ -119,7 +119,8 @@ $tampil_event = mysqli_query($link,"SELECT * FROM tb_event ORDER BY id_event DES
                 <?php while ($data_artikel = mysqli_fetch_array($tampil_artikel)){?>
                 <div class="col-md-6 blog-post-inner wow fadeIn" data-wow-delay=".5s">
                     <div class="thumbnail">
-                        <a href="#"><img src="admin/pages/forms/img/img_artikel/<?php  echo $data_artikel['gambar_artikel']?>" alt="dalih" class="blog-image" ></a>
+                           <a href="#" ><img width="" height="" src="admin/pages/forms/img/img_artikel/<?php  echo $data_artikel['gambar_artikel']?>" alt="Tidak ada gambar" class="blog-image"></a>
+                        <a href="#"><img src="admin/pages/forms/img/img_artikel/<?php  echo $data_artikel['gambar_artikel']?>" alt="" class="blog-image" ></a>
                         <div class="caption">
                             <a href=""><span class="label" style="background-color: #13CE66; border-radius: 0; border-bottom-right-radius: .50em; padding: 3px 8px;"><?= $data_artikel['kategori']?></span></a>
                             <a href="article-page.php?Id=<?php echo $data_artikel["id_artikel"] ?>" class="blog-title"><?php  echo $data_artikel['judul_artikel']?></a>
@@ -151,7 +152,7 @@ $tampil_event = mysqli_query($link,"SELECT * FROM tb_event ORDER BY id_event DES
                    <?php while ($data_artikel = mysqli_fetch_array($tampil_artikel)){?>
                    <div class="col-md-4 blog-post-inner wow fadeIn" data-wow-delay=".3s">
                        <div class="thumbnail">
-                           <a href="#" ><img width="" height="" src="admin/pages/forms/img/img_artikel/<?php  echo $data_artikel['gambar_artikel']?>" alt="dalih" class="blog-image"></a>
+                           <a href="#" ><img width="" height="" src="admin/pages/forms/img/img_artikel/<?php  echo $data_artikel['gambar_artikel']?>" alt="Tidak ada gambar" class="blog-image"></a>
                            <div class="caption">
                                <a href=""><span class="label" style="background-color: #13CE66; border-radius: 0; border-bottom-right-radius: .50em; padding: 3px 8px;"><?php echo $data_artikel['kategori']?></span></a> <br><br>
                                <a href="article-page.php?Id=<?php echo $data_artikel["id_artikel"] ?>" class="blog-title"><?php  echo $data_artikel['judul_artikel']?></a>
