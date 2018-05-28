@@ -9,7 +9,7 @@
 session_start();
 require_once "../lib/koneksi.php";
 $link = connect();
-$id=$_GET["Id"];
+$id = $_GET["Id"];
 if (isset($_SESSION['username'])) {
     include "../lib2/header.php";
     ?>

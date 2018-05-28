@@ -39,6 +39,7 @@ $tampil = mysqli_query($link,"SELECT * FROM tb_tampilan");
                 <center>
                 <h1>Tentang</h1>
                 <br><br>
+                <div class="visi">
                 <h4>Visi</h4>
                 <h5>“Terwujudnya Warga Madrasah yang unggul dalam Imtaq, berwasasan Iptek, Berdaya Saing dan Menjadi Pilihan Umat”</h5>
                 <br>
@@ -51,6 +52,7 @@ $tampil = mysqli_query($link,"SELECT * FROM tb_tampilan");
                  Meningkatkan Kualitas Pelayanan Administrasi secara Profesional<br><br>
                  Meningkatkan Kualitas hubungan dengan masyarakat<br><br>
                 </h5>
+                </div>
               </center>
             </div>
         </div>
@@ -111,7 +113,6 @@ $tampil_event = mysqli_query($link,"SELECT * FROM tb_event ORDER BY id_event DES
         </div>
         <?php
         $tampil_artikel = mysqli_query($link,"SELECT * FROM tb_artikel ORDER  BY id_artikel ASC LIMIT 2 ");
-        $popular        = mysqli_query($link,"SELECT * FROM tb_artikel WHERE views DESC");
         ?>
         <!-- ini bagian future blog post -->
         <div class="col-md-8 col-xs-12 blog-post">
@@ -120,7 +121,6 @@ $tampil_event = mysqli_query($link,"SELECT * FROM tb_event ORDER BY id_event DES
                 <div class="col-md-6 blog-post-inner wow fadeIn" data-wow-delay=".5s">
                     <div class="thumbnail">
                            <a href="#" ><img width="" height="" src="admin/pages/forms/img/img_artikel/<?php  echo $data_artikel['gambar_artikel']?>" alt="Tidak ada gambar" class="blog-image"></a>
-                        <a href="#"><img src="admin/pages/forms/img/img_artikel/<?php  echo $data_artikel['gambar_artikel']?>" alt="" class="blog-image" ></a>
                         <div class="caption">
                             <a href=""><span class="label" style="background-color: #13CE66; border-radius: 0; border-bottom-right-radius: .50em; padding: 3px 8px;"><?= $data_artikel['kategori']?></span></a>
                             <a href="article-page.php?Id=<?php echo $data_artikel["id_artikel"] ?>" class="blog-title"><?php  echo $data_artikel['judul_artikel']?></a>

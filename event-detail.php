@@ -115,7 +115,7 @@ $tampil_event = mysqli_query($link,"SELECT * FROM tb_event WHERE id_event='$id'"
                     <h5>by <?= $data_event['penyelenggara'] ?></h5>
                     <div class="price"><?= $data_event['sifat'] ?></div>
                     <div class="daftar-event">
-                        <a href="" class="btn btn-success" style="width: 100%;">Daftar</a>
+                        <button type="button" class="btn btn-success" style="width: 100%;" id="myBtn">Daftar</a>
                     </div>
                 </div>
             </div>
@@ -245,6 +245,88 @@ $tampil_event = mysqli_query($link,"SELECT * FROM tb_event WHERE id_event='$id'"
             }
         }
     );
+</script>
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<style>
+  .modal-header, h4, .close {
+      background-color: #5cb85c;
+      color:white !important;
+      text-align: center;
+      font-size: 30px;
+  }
+  .modal-footer {
+      background-color: #f9f9f9;
+  }
+  </style>
+ <?php
+/*require_once 'admin/pages/lib/koneksi.php';
+$link=connect();
+
+if(isset($_POST['kirim'])){
+
+
+$nama=$_POST['nama'];
+$username=$_POST['username'];
+$password=$_POST['password'];
+
+$insert = "INSERT INTO tb_admin(id_admin,Nama,Username,Password,level) values('','$nama','$username','$password','2')";
+$kirim = mysqli_query($link, $insert);
+if ($kirim){
+    echo "<script>alert('berhasil cuuuu');</script>";
+    header("location:index.php");
+    
+}
+else{
+    header("location:index.php");
+}
+}*/
+?>
+
+<div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header" style="padding:35px 50px;">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4><span class="glyphicon glyphicon-edit"></span>Daftar Event</h4>
+        </div>
+        <div class="modal-body" style="padding:40px 50px;">
+         <form action='' method="post">
+         
+          <div class="form-group">
+              <label for="usrname"><span class="glyphicon glyphicon-user"></span> Nama</label>
+              <input type="text" class="form-control" id="nama" name="nama" placeholder="Enter Nama">
+            </div>
+            <div class="form-group">
+              <label for="usrname"><span class="glyphicon glyphicon-home"></span> Kelas</label>
+              <input type="text" class="form-control" name="username" id="usrname" placeholder="Enter email">
+            </div>
+            <div class="form-group">
+              <label for="psw"><span class="fa fa-university"></span> Asal Sekolah</label>
+              <input type="text" class="form-control" name="password" id="psw" placeholder="Enter password">
+            </div>
+              <button type="submit" name="kirim" class="btn btn-success btn-block">Daftar</button>
+        </form>
+        </div>
+        <div class="modal-footer">
+          <button type="submit" class="btn btn-danger btn-default pull-left" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span> Cancel</button>
+        </div>
+      </div>
+      
+    </div>
+  </div> 
+</div>
+<script>
+$(document).ready(function(){
+    $("#myBtn").click(function(){
+        $("#myModal").modal();
+    });
+});
 </script>
 </body>
 </html>

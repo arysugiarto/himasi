@@ -8,7 +8,7 @@
 session_start();
 require_once "../lib/koneksi.php";
 $link = connect();
-$id = $_GET["id"];
+$id = $_GET["Id"];
 if (isset($_SESSION['username'])) {
     include "../lib2/header.php";
     ?>
@@ -118,14 +118,16 @@ if (isset($_SESSION['username'])) {
                                 </div>
                                 <!-- /. tools -->
                             </div>
-                            <?php $tampil_artikel = mysqli_query($link, "SELECT * FROM tb_artikel WHERE id_artikel='$id' "); ?>
+                            <?php $tampil_artikel = mysqli_query($link,"SELECT * FROM tb_artikel WHERE id_artikel='$id' "); ?>
                             <!-- /.box-header -->
                             <div class="box-body pad">
                                 <form action="update_artikel.php" method="post" enctype="multipart/form-data">
                                     <table>
-                                        <?php while ($data_artikel=mysqli_fetch_array($tampil_artikel)){?>
+                                        <?php 
+                                        while ($data_artikel=mysqli_fetch_array($tampil_artikel)){
+                                            ?>
                                         <tr>
-                                            <td> <input  class="form-control" type="text" name="judul" size="150" placeholder="Judul Artikel/Berita" value="<?php echo $data_artikel['judul_artikel'] ?>" ></td>
+                                            <td> <input  class="form-control" type="text" name="judul" size="150" placeholder="Judul Artikel/Berita" value="<?php echo $data_artikel['judul_artikel'] ?>"></td>
                                         </tr>
                                         <br>
                                         <tr>
@@ -139,12 +141,13 @@ if (isset($_SESSION['username'])) {
                                             <td>
                                                 <label>Kategori</label>
                                                 <br>
-                                                <input size="30" type="checkbox" name="pendidikan" value="<?php  echo $data_artikel['kategori'] ?>">pendidikan
+                                                <input size="30" type="radio" name="kategori" value="<?php  echo $data_artikel['kategori'] ?>">pendidikan
+                                                <input size="30" type="radio" name="kategori" value="<?php  echo $data_artikel['kategori'] ?>">berita
                                             </td>
                                         </tr>
                                     </table>
                                     <br>
-                                    <textarea id="summernote" name="artikel" rows="10" cols="80" <?php echo $data_artikel['isi_artikel'] ?>></textarea>
+                                    <textarea id="summernote" name="artikel" rows="10" cols="80" ><?php echo $data_artikel['isi_artikel'] ?></textarea>
                                     <br>
                                     <input type="hidden" name="id" <?php echo $data_artikel['id_artikel']?>>
                                     <?php } ?>

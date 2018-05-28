@@ -131,7 +131,7 @@ if (isset($_SESSION['username'])) {
                                     <td><?php echo $data_artikel['judul_artikel']?></td>
                                     <td><?php echo $data_artikel['tanggal'] ?></td>
                                     <td>
-                                        <a href="artikel_update.php?id=<?echo  $data_artikel['id_artikel']?>"><button class="btn btn-info btn-sm"><i class="glyphicon glyphicon-edit"></i> Edit</button></a>
+                                        <a href="artikel_update.php?Id=<?php echo  $data_artikel['id_artikel']?>"><button class="btn btn-info btn-sm"><i class="glyphicon glyphicon-edit"></i> Edit</button></a>
                                         <a href="delete_artikel.php?id_artikel=<?=$data_artikel['id_artikel']?>"><button class="btn btn-danger btn-sm"><i class="glyphicon glyphicon-trash"></i> Hapus</button></a>
                                     </td>
                                 </tr>

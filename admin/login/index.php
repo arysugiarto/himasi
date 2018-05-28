@@ -47,6 +47,7 @@ session_start()
 			}else{ //jika username dan password benar
 				$row = mysqli_fetch_assoc($query); //mengambil data dari variable $query
 				$_SESSION['nama']=$row['Nama'];
+				$_SESSION['id_admin']=$row['id_admin'];
 		    $_SESSION['level']=$row['level'];
 				if($row['level'] == 1 && $level == 1){ //membandingkan level yg di value form dengan level yang ada di database
 					$_SESSION['username']=$username; //membandigkan user yg di database dengan yg di input di form
