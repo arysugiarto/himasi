@@ -85,13 +85,13 @@ if (isset($_SESSION['username'])) {
             <!-- Content Header (Page header) -->
             <section class="content-header">
                 <h1>
-                    Data Tables
-                    <small>advanced tables</small>
+                    Data Galery
+                    <small></small>
                 </h1>
                 <ol class="breadcrumb">
                     <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
                     <li><a href="#">Tables</a></li>
-                    <li class="active">Data tables</li>
+                    <li class="active">Data Galery</li>
                 </ol>
             </section>
             <?php
@@ -106,7 +106,7 @@ if (isset($_SESSION['username'])) {
                     <div class="col-xs-12">
                         <div class="box">
                             <div class="box-header">
-                                <h3 class="box-title">Hover Data Table</h3>
+                                <h3 class="box-title"></h3>
                             </div>
                             <!-- /.box-header -->
                             <div class="box-body">
@@ -153,9 +153,9 @@ if (isset($_SESSION['username'])) {
     <!-- /.content-wrapper -->
     <footer class="main-footer">
         <div class="pull-right hidden-xs">
-            <b>Version</b> 2.4.0
+            <b></b> 
         </div>
-        <strong>Copyright &copy; 2014-2016 <a href="https://adminlte.io">Almsaeed Studio</a>.</strong> All rights
+        <strong>Copyright &copy; 2014-2016 <a href=""></a>.</strong> All rights
         reserved.
     </footer>
 

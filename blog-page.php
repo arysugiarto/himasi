@@ -49,12 +49,8 @@
        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav navbar-right">
                 <li><a href="index.php">home</a></li>
-                <li class="dropdown">
-                    <a href="#" >tentang </a>
-                </li>
-                <li class="dropdown">
-                <a href="gallery-page.php" >gallery </a>
-                </li>
+                <li><a href="tentang.php" >tentang </a></li>
+                <li> <a href="gallery-page.php" >gallery </a></li>
                 <li><a href="#">kontak</a></li>
                 <li><a href="event-page.php">events</a></li>
                 <li><a href="blog-page.php">blog</a></li>

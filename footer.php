@@ -20,8 +20,6 @@
                 <div class="col-md-4 col-xs-6 footer-col">
                     <ul>
                         <li class="head-list">Tentang</li>
-                        <li><a href="">Sejarah</a></li>
-                        <li><a href="">Ketua Hima</a></li>
                         <li><a href="">Visi Misi</a></li>
                     </ul>
                 </div>

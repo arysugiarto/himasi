@@ -51,12 +51,8 @@
        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav navbar-right">
                 <li><a href="index.php">home</a></li>
-                <li class="dropdown">
-                    <a href="#" >tentang </a>
-                </li>
-                <li class="dropdown">
-                <a href="gallery-page.php" >gallery </a>
-                </li>
+                <li><a href="tentang.php" >tentang </a></li>
+                <li> <a href="gallery-page.php" >gallery </a></li>
                 <li><a href="#">kontak</a></li>
                 <li><a href="event-page.php">events</a></li>
                 <li><a href="blog-page.php">blog</a></li>
@@ -257,27 +253,28 @@ $tampil_event = mysqli_query($link,"SELECT * FROM tb_event WHERE id_event='$id'"
   }
   </style>
  <?php
-/*require_once 'admin/pages/lib/koneksi.php';
+require_once 'admin/pages/lib/koneksi.php';
 $link=connect();
 
 if(isset($_POST['kirim'])){
 
 
 $nama=$_POST['nama'];
-$username=$_POST['username'];
-$password=$_POST['password'];
+$kelas=$_POST['kelas'];
+$asal_sekolah=$_POST['asal'];
+$email=$_POST['email'];
+$jurusan=$_POST['jurusan'];
 
-$insert = "INSERT INTO tb_admin(id_admin,Nama,Username,Password,level) values('','$nama','$username','$password','2')";
+$insert = "INSERT INTO tb_dafevent(id_dafevent,nama,kelas,asal_sekolah,email,jurusan) values('','$nama','$kelas','$asal_sekolah','$email','$jurusan')";
 $kirim = mysqli_query($link, $insert);
 if ($kirim){
     echo "<script>alert('berhasil cuuuu');</script>";
-    header("location:index.php");
-    
+    header("location:event-detail.php");
 }
 else{
-    header("location:index.php");
+    header("location:event-detail.php");
 }
-}*/
+}
 ?>
 
 <div class="modal fade" id="myModal" role="dialog">
@@ -298,11 +295,18 @@ else{
             </div>
             <div class="form-group">
               <label for="usrname"><span class="glyphicon glyphicon-home"></span> Kelas</label>
-              <input type="text" class="form-control" name="username" id="usrname" placeholder="Enter email">
+              <input type="text" class="form-control" name="kelas" id="usrname" placeholder="Enter email">
             </div>
             <div class="form-group">
               <label for="psw"><span class="fa fa-university"></span> Asal Sekolah</label>
-              <input type="text" class="form-control" name="password" id="psw" placeholder="Enter password">
+              <input type="text" class="form-control" name="asal" id="psw" placeholder="Enter password">
+            </div><div class="form-group">
+              <label for="psw"><span class="fa fa-peoplle"></span> Jurusan</label>
+              <input type="text" required class="form-control" name="jurusan" id="psw" placeholder="Enter password">
+            </div>
+            <div class="form-group">
+              <label for="psw"><span class="fa fa-envelope"></span> Email</label>
+              <input type="email" required class="form-control" name="email" id="psw" placeholder="Enter password">
             </div>
               <button type="submit" name="kirim" class="btn btn-success btn-block">Daftar</button>
         </form>
