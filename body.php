@@ -34,10 +34,10 @@ $tampil = mysqli_query($link,"SELECT * FROM tb_tampilan");
 <!-- end header -->
 <br>
 </div>
-        <div class="media-container-row" id="tentang">
+        <div class="media-container-row" >
+        <center>
+        <h2 id="tentang"><font color="black">TENTANG</font></h2>
             <div class="title col-0 col-md-0">
-                <center>
-                <h1>TENTANG</h1>
                 <br><br>
                 <div class="visi"><br>
                 <h3>Visi</h3>

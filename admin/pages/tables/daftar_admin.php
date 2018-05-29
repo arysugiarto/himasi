@@ -3,19 +3,21 @@
  * Created by PhpStorm.
  * User: Ary Sugiarto
  * Date: 12/05/17
- * Time: 13:44
+ * Time: 14:24
  */
 session_start();
+require_once "../lib/koneksi.php";
+$link = connect();
 if (isset($_SESSION['username'])) {
-    include "../lib2/header.php";      
-?>
+    include "../lib2/header.php";
+    ?>
 <!-- User Account: style can be found in dropdown.less -->
-<li class="dropdown user user-menu">
+ <li class="dropdown user user-menu">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                             <span class="hidden-xs"><?= $_SESSION['nama']; ?></span>
                         </a>
                             <li class="user-footer">
-                                    <a href="../../login/logout.php" class="btn btn-danger btn-md">Logout <i class="glyphicon glyphicon-log-out"></i></a>
+                            <a href="../../login/logout.php" class="btn btn-danger btn-md">Logout <i class="glyphicon glyphicon-log-out"></i></a>
                             </li>
                     </li>
                     <!-- Control Sidebar Toggle Button -->
@@ -26,131 +28,133 @@ if (isset($_SESSION['username'])) {
             </div>
         </nav>
     </header>
-
-    <!-- Left side column. contains the logo and sidebar -->
-    <aside class="main-sidebar">
-        <!-- sidebar: style can be found in sidebar.less -->
-        <section class="sidebar">
-            <!-- Sidebar user panel -->
-            <div class="user-panel">
-            </div>
-    
-            <!-- sidebar menu: : style can be found in sidebar.less -->
-            <ul class="sidebar-menu" data-widget="tree">
-                <li class="header">MAIN NAVIGATION</li>
-                <li class="active treeview">
-                    <a href="#">
-                        <i class="fa fa-dashboard"></i> <span>Dashboard</span>
-                        <span class="pull-right-container">
+        <!-- Left side column. contains the logo and sidebar -->
+        <aside class="main-sidebar">
+            <!-- sidebar: style can be found in sidebar.less -->
+            <section class="sidebar">
+                <!-- Sidebar user panel -->
+                <div class="user-panel">
+                <!-- /.search form -->
+                <!-- sidebar menu: : style can be found in sidebar.less -->
+                <ul class="sidebar-menu" data-widget="tree">
+                    <li class="header">MAIN NAVIGATION</li>
+                    <li class="active treeview">
+                        <a href="#">
+                            <i class="fa fa-dashboard"></i> <span>Dashboard</span>
+                            <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
             </span>
-                    </a>
-                    <ul class="treeview-menu">
-                        <li class="active"><a href="../../index.php"><i class="fa fa-circle-o"></i> Dashboard</a></li>
-                    </ul>
-                </li>
+                        </a>
+                        <ul class="treeview-menu">
+                            <li class="active"><a href="../../index.php"><i class="fa fa-circle-o"></i> Dashboard</a></li>
+                        </ul>
+                    </li>
 
-                <li class="treeview">
-                    <a href="#">
-                        <i class="fa fa-edit"></i> <span>Forms</span>
-                        <span class="pull-right-container">
+                    <li class="treeview">
+                        <a href="#">
+                            <i class="fa fa-edit"></i> <span>Forms</span>
+                            <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
             </span>
-                    </a>
-                    <ul class="treeview-menu">
-                        <li><a href="editors.php"><i class="fa fa-circle-o"></i>Post Artikel</a></li>
-                        <li><a href="event.php"><i class="fa fa-circle-o"></i>Post Event</a></li>
-                        <li><a href="galeri.php"><i class="fa fa-circle-o"></i>Post Galery</a></li>
-                    </ul>
-                </li>
-                <li class="treeview">
-                    <a href="#">
-                        <i class="fa fa-table"></i> <span>Tables</span>
-                        <span class="pull-right-container">
+                        </a>
+                        <ul class="treeview-menu">
+                            <li><a href="../forms/editors.php"><i class="fa fa-circle-o"></i>Post Artikel</a></li>
+                            <li><a href="../forms/event.php"><i class="fa fa-circle-o"></i>Post Event</a></li>
+                            <li><a href="../forms/galeri.php"><i class="fa fa-circle-o"></i>Post Galery</a></li>
+                        </ul>
+                    <li class="treeview">
+                        <a href="#">
+                            <i class="fa fa-table"></i> <span>Tables</span>
+                            <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
             </span>
-                    </a>
-                    <ul class="treeview-menu">
-                        <li><a href="../tables/data.php"><i class="fa fa-circle-o"></i> Data Artikel</a></li>
-                        <li><a href="../tables/data_event.php"><i class="fa fa-circle-o"></i> Data Event</a></li>
-                        <li><a href="../tables/data_galeri.php"><i class="fa fa-circle-o"></i> Data Galeri</a></li>
-                    </ul>
-                </li>
-            </ul>
-        </section>
-        <!-- /.sidebar -->
-    </aside>
+                        </a>
+                        <ul class="treeview-menu">
+                            <li><a href="data.php"><i class="fa fa-circle-o"></i> Data Artikel</a></li>
+                            <li><a href="data_event.php"><i class="fa fa-circle-o"></i> Data Event</a></li>
+                            <li><a href="data_galeri.php"><i class="fa fa-circle-o"></i> Data Galeri</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </section>
+            <!-- /.sidebar -->
+        </aside>
+        <!-- Content Wrapper. Contains page content -->
+        <div class="content-wrapper">
+            <!-- Content Header (Page header) -->
+            <section class="content-header">
+                <h1>
+                    Data Event
+                    <small></small>
+                </h1>
+                <ol class="breadcrumb">
+                    <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
+                    <li><a href="#">Tables</a></li>
+                    <li class="active">Data Event</li>
+                </ol>
+            </section>
+            <?php
+            require_once "../lib/koneksi.php";
+            $link = connect();
 
-
-    <!-- Content Wrapper. Contains page content -->
-    <div class="content-wrapper">
-        <!-- Content Header (Page header) -->
-        <section class="content-header">
-            <h1>
-                Post Artikel
-                <small></small>
-            </h1>
-            <ol class="breadcrumb">
-                <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-                <li><a href="#">Forms</a></li>
-                <li class="active">Artikel</li>
-            </ol>
-        </section>
-
-        <!-- Main content -->
-        <section class="content">
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="box box-info">
-                        <div class="box-header">
-                            <h3 class="box-title">
-                                <small></small>
-                            </h3>
-                            <!-- tools box -->
-                            <div class="pull-right box-tools">
-                                <button type="button" class="btn btn-info btn-sm" data-widget="collapse" data-toggle="tooltip"
-                                        title="Collapse">
-                                    <i class="fa fa-minus"></i></button>
-                                <button type="button" class="btn btn-info btn-sm" data-widget="remove" data-toggle="tooltip"
-                                        title="Remove">
-                                    <i class="fa fa-times"></i></button>
+            ?>
+            <?php $tampil_admin=mysqli_query($link,"SELECT * FROM tb_admin WHERE level='1'"); ?>
+            <!-- Main content -->
+            <section class="content">
+                <div class="row">
+                    <div class="col-xs-12">
+                        <div class="box">
+                            <div class="box-header">
+                                <h3 class="box-title"></h3>
                             </div>
-                            <!-- /. tools -->
+                            <!-- /.box-header -->
+                            <div class="box-body">
+                                <table id="example2" class="table table-bordered table-hover">
+                                    <thead>
+                                    <tr>
+                                        <th>No</th>
+                                        <th>Nama</th>
+                                        <th>Aksi</th>
+                                    </tr>
+                                    </thead>
+                                    <?php
+                                    $no=0;
+                                    while ($data_admin=mysqli_fetch_array($tampil_admin)){
+                                        $no++
+                                        ?>
+                                        <tbody>
+                                        <tr>
+                                            <td width=2""><?php echo $no ?></td>
+                                            <td><?php echo $data_admin['Nama']?></td>
+                                            <td>
+                                                <a href="id=myModal?Id=<?= $data_admin['id_admin']?>" ><i class="glyphicon glyphicon-edit"></i> Edit</button></a>
+                                                <a href="delete_dafadmin.php?id_admin=<?= $data_admin['id_admin']?>"><button class="btn btn-danger btn-sm"><i class="glyphicon glyphicon-trash"></i> Hapus</button></a>
+                                            </td>
+                                        </tr>
+                                        </tbody>
+                                    <?php } ?>
+                                </table>
+                            </div>
+                            <!-- /.box-body -->
                         </div>
-                        <!-- /.box-header -->
-                        <div class="box-body pad">
-                            <form action="visi_proses.php" method="post" enctype="multipart/form-data">
-                                <h4>Input Visi</h4>
-                                <br>
-                                <textarea  name="visi" rows="10" cols="80"></textarea>
-                                <br>
-                                <h4>Input Misi</h4>
-                                <br>
-                                <textarea  name="misi" rows="10" cols="80"></textarea>
-                                <br>
-                                <button type="submit"  class="btn btn-flat"><i class="fa fa-send"></i>Send</button>
-                            </form>
-                        </div>
-                        <div>
 
-                        </div>
-                        <div>
-
-                        </div>
+                        <!-- /.box -->
+                        <!-- /.box-body -->
                     </div>
+                    <!-- /.box -->
                 </div>
-                <!-- /.col-->
-            </div>
-            <!-- ./row -->
+                <!-- /.col -->
+        </div>
+        <!-- /.row -->
         </section>
         <!-- /.content -->
     </div>
     <!-- /.content-wrapper -->
     <footer class="main-footer">
         <div class="pull-right hidden-xs">
-            <b></b>
+            <b>Version</b> 2.4.0
         </div>
-        <strong>Copyright &copy; 2014-2016 <a href=""></a>.</strong> All rights
+        <strong>Copyright &copy; 2014-2016 <a href="https://adminlte.io">Almsaeed Studio</a>.</strong> All rights
         reserved.
     </footer>
 
@@ -347,32 +351,41 @@ if (isset($_SESSION['username'])) {
     <!-- Add the sidebar's background. This div must be placed
          immediately after the control sidebar -->
     <div class="control-sidebar-bg"></div>
-</div>
-<!-- ./wrapper -->
+    </div>
+    <!-- ./wrapper -->
 
-<!-- jQuery 3 -->
-<script src="../../bower_components/jquery/dist/jquery.min.js"></script>
-<!-- Bootstrap 3.3.7 -->
-<script src="../../bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
-<!-- FastClick -->
-<script src="../../bower_components/fastclick/lib/fastclick.js"></script>
-<!-- AdminLTE App -->
-<script src="../../dist/js/adminlte.min.js"></script>
-<!-- AdminLTE for demo purposes -->
-<script src="../../dist/js/demo.js"></script>
-<!-- CK Editor -->
-<script src="../../bower_components/ckeditor/ckeditor.js"></script>
-<!-- Bootstrap WYSIHTML5 -->
-<script src="../../plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js"></script>
-<script src="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.8/summernote.js"></script>
-<script>
-    $(document).ready(function() {
-        $('#summernote').summernote();
-    });
-</script>
-</body>
-</html>
-<?php
+    <!-- jQuery 3 -->
+    <script src="../../bower_components/jquery/dist/jquery.min.js"></script>
+    <!-- Bootstrap 3.3.7 -->
+    <script src="../../bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <!-- DataTables -->
+    <script src="../../bower_components/datatables.net/js/jquery.dataTables.min.js"></script>
+    <script src="../../bower_components/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
+    <!-- SlimScroll -->
+    <script src="../../bower_components/jquery-slimscroll/jquery.slimscroll.min.js"></script>
+    <!-- FastClick -->
+    <script src="../../bower_components/fastclick/lib/fastclick.js"></script>
+    <!-- AdminLTE App -->
+    <script src="../../dist/js/adminlte.min.js"></script>
+    <!-- AdminLTE for demo purposes -->
+    <script src="../../dist/js/demo.js"></script>
+    <!-- page script -->
+    <script>
+        $(function () {
+            $('#example1').DataTable()
+            $('#example2').DataTable({
+                'paging'      : true,
+                'lengthChange': false,
+                'searching'   : false,
+                'ordering'    : true,
+                'info'        : true,
+                'autoWidth'   : false
+            })
+        })
+    </script>
+    </body>
+    </html>
+    <?php
 }else {
     ?>
     <script>
@@ -382,3 +395,64 @@ if (isset($_SESSION['username'])) {
     <?php
 }
 ?>
+<?php
+require_once 'koneksi.php';
+$link=connect();
+$id=$_GET['Id'];
+if(isset($_POST['kirim'])){
+
+
+$nama=$_POST['nama'];
+
+$insert = "INSERT INTO tb_admin(Nama) values ('$nama')";
+$kirim = mysqli_query($link, $insert);
+if ($kirim){
+    echo "<script>alert('berhasil cuuuu');</script>";
+    header("location:daftar_admin.php");
+    
+}
+else{
+    header("location:daftar_admin.php");
+}
+}
+?>
+
+        !-- Modal -->
+<div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header" style="padding:35px 50px;">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4><span class="glyphicon glyphicon-edit"></span>Tambah Admin</h4>
+        </div>
+        <?php $tampil_admin=mysqli_query($link,"SELECT * FROM tb_admin WHERE id_admin='$id'"); ?>
+        <div class="modal-body" style="padding:40px 50px;">
+         <form action='' method="post">
+         <?php
+         while ($data_admin=mysqli_fetch_array($tampil_admin)){
+              ?>
+          <div class="form-group">
+              <label for="usrname"><span class="glyphicon glyphicon-credit-card"></span> Nama</label>
+              <input type="text" class="form-control" id="nama" name="nama" placeholder="Enter Nama" value="<?php echo $data_admin['Nama']?>">
+            </div>
+         <?php }?>
+              <button type="submit" name="kirim" class="btn btn-success btn-block"><span class="glyphicon glyphicon-plus"></span> Tambah</button>
+        </form>
+        </div>
+        <div class="modal-footer">
+          <button type="submit" class="btn btn-danger btn-default pull-left" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span> Cancel</button>
+        </div>
+      </div>
+      
+    </div>
+  </div> 
+</div>
+<script>
+$(document).ready(function(){
+    $("#myBtn").click(function(){
+        $("#myModal").modal();
+    });
+});
+</script>

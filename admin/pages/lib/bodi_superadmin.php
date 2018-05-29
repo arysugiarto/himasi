@@ -48,8 +48,7 @@
                         <li><a href="pages/tables/data.php"><i class="fa fa-circle-o"></i> Data Artikel</a></li>
                         <li><a href="pages/tables/data_event.php"><i class="fa fa-circle-o"></i> Data Event</a></li>
                         <li><a href="pages/tables/data_galeri.php"><i class="fa fa-circle-o"></i> Data Galeri</a></li>
-                        <li><a href="pages/tables/data_tampilan.php"><i class="fa fa-circle-o"></i> Data Tampilan</a></li>
-                        <li><a href=""><i class="fa fa-circle-o"></i>Daftar Admin</a></li>
+                        <li><a href="pages/tables/daftar_admin.php"><i class="fa fa-circle-o"></i>Daftar Admin</a></li>
                     </ul>
                 </li>
                </span>

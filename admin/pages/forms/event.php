@@ -10,7 +10,7 @@ if (isset($_SESSION['username'])) {
     include "../lib2/header.php";      
 ?>
 <!-- User Account: style can be found in dropdown.less -->
-< <li class="dropdown user user-menu">
+<li class="dropdown user user-menu">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                             <span class="hidden-xs"><?= $_SESSION['nama']; ?></span>
                         </a>
