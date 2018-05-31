@@ -127,7 +127,7 @@ if (isset($_SESSION['username'])) {
                                             <td width=2""><?php echo $no ?></td>
                                             <td><?php echo $data_admin['Nama']?></td>
                                             <td>
-                                                <a href="id=myModal?Id=<?= $data_admin['id_admin']?>" ><i class="glyphicon glyphicon-edit"></i> Edit</button></a>
+                                                <a href="update_admin.php?id_admin=<?= $data_admin['id_admin']?>"><button class="btn btn-danger btn-sm"><i class="glyphicon glyphicon-trash"></i> Edit</button></a>
                                                 <a href="delete_dafadmin.php?id_admin=<?= $data_admin['id_admin']?>"><button class="btn btn-danger btn-sm"><i class="glyphicon glyphicon-trash"></i> Hapus</button></a>
                                             </td>
                                         </tr>
@@ -390,7 +390,7 @@ if (isset($_SESSION['username'])) {
     ?>
     <script>
         alert('Silakan login dulu!');
-        parent.location.href="../../login/index.html"
+        parent.location.href="../../login/index.php"
     </script>
     <?php
 }

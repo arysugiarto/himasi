@@ -205,8 +205,8 @@ $tampil_galeri = mysqli_query($link,"SELECT * FROM tb_galeri ORDER  BY id_galeri
             while ($data_galeri=mysqli_fetch_array($tampil_galeri)){
             ?>
                 <figure class="col-md-2 effect-ming">
-                    <a href="admin/pages/forms/img/img_galeri/<?php echo $data_galeri['gambar_galeri'] ?>" class="thumbnail" >
-                        <img src="admin/pages/forms/img/img_galeri/<?php echo $data_galeri['gambar_galeri'] ?>" alt="dalih">
+                    <a href="admin/pages/forms/img/img_galeri/<?php echo $data_galeri['gambar_galeri'] ?>" class="thumbnail" data-caption="<?= $data_galeri['caption']?>" >
+                        <img src="admin/pages/forms/img/img_galeri/<?php echo $data_galeri['gambar_galeri'] ?>" alt="">
                     </a>
                 </figure>
                 <?php } ?>

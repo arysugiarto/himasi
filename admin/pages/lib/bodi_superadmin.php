@@ -67,7 +67,8 @@
                 Dashboard
                 <small>Control panel</small>
             </h1><br>
-            <button type="button" class="btn btn-info btn-sm" id="myBtn"><i class="glyphicon glyphicon-plus"></i> Tambah Admin</button>
+            <button type="button" class="btn btn-info btn-sm" id="myBtn" ><i class="glyphicon glyphicon-plus"></i> Tambah Admin</button>
+            <a href="pages/tables/daftar_admin.php"><button type="button" class="btn btn-info btn-sm" ><i class="glyphicon glyphicon-plus"></i> Daftar Admin</button>
             <ol class="breadcrumb">
                 <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
                 <li class="active">Dashboard</li>
@@ -205,9 +206,6 @@ else{
             </div>
               <button type="submit" name="kirim" class="btn btn-success btn-block"><span class="glyphicon glyphicon-plus"></span> Tambah</button>
         </form>
-        </div>
-        <div class="modal-footer">
-          <button type="submit" class="btn btn-danger btn-default pull-left" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span> Cancel</button>
         </div>
       </div>
       

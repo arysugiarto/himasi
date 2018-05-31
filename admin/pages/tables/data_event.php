@@ -392,7 +392,7 @@ if (isset($_SESSION['username'])) {
     ?>
     <script>
         alert('Silakan login dulu!');
-        parent.location.href="../../login/index.html"
+        parent.location.href="../../login/index.php"
     </script>
     <?php
 }

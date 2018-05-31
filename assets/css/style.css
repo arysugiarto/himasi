@@ -890,4 +890,15 @@ footer .developer a {
 .warna{
 	color: #000;
 }
-	
+.content-facilities{
+	padding-bottom: 40px !important;
+}
+
+.facilities{
+	padding: 20px;
+	margin-top: 40px;
+}
+
+.facilities img{
+	padding-bottom: 20px;
+}

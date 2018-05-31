@@ -284,7 +284,7 @@ else{
       <div class="modal-content">
         <div class="modal-header" style="padding:35px 50px;">
           <button type="button" class="close" data-dismiss="modal">&times;</button>
-          <h4><span class="glyphicon glyphicon-edit"></span>Daftar Event</h4>
+          <h4><span class="glyphicon glyphicon-edit" id="myBtn" data-target="#Edit_Kelas" data-toggle="modal" data-id="<?php echo  $kelas['id_kelas']; ?>"></span>Daftar Event</h4>
         </div>
         <div class="modal-body" style="padding:40px 50px;">
          <form action='' method="post">

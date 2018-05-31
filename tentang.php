@@ -120,6 +120,54 @@ $tampil_galeri = mysqli_query($link,"SELECT * FROM tb_galeri ORDER  BY id_galeri
 </div>
 </div>
 
+
+  <br><br>
+    <!-- Fasilitas -->
+    <div id="fasilitas" class="content-facilities">
+        <div class="container">
+            <center>
+            <h3>Fasilitas Utama</h3>
+            </center>
+          <div class="row">
+            <div class="facilities col-md-4 col-6 box-hover">
+              <center><i class="fa fa-graduation-cap fa-5x"></i>
+              <h4>Program beasiswa diberikan kepada siswa yang berprestasi</h4></center>
+            </div>
+            <div class="facilities col-md-4 col-6 box-hover">
+            <center><i class="fa fa-wifi fa-5x"></i>
+              <h4>Free Hotspot untuk menunjang kegiatan belajar mengajar</h4></center>
+            </div>
+            <div class="facilities col-md-4 col-6 box-hover">
+            <center><i class="fa fa-university fa-5x"></i>
+              <h4>Asrama putra dan putri sebagai sarana memperdalam kajian kitab kuning</h4></center>
+            </div>
+          </div>
+        </div>
+      </div>
+<br><br>
+<!-- Fasilitas -->
+<div id="fasilitas" class="content-facilities">
+        <div class="container">
+        <center>
+            <h3>Jurusan</h3>
+            </center>
+          <div class="row">
+            <div class="facilities col-md-4 col-6 box-hover">
+              <center><img src="assets/image/jurusan/1.png" class="img-fluid" alt="" width="70" height="70">
+              <h4>IPA (Ilmu Pengetahuan Alam)</h4></center>
+            </div>
+            <div class="facilities col-md-4 col-6 box-hover">
+              <center><img src="assets/image/jurusan/2.png" class="img-fluid" alt="" width="70" height="70">
+              <h4>IAI (Ilmu Agama Islam)</h4></center>
+            </div>
+            <div class="facilities col-md-4 col-6 box-hover">
+              <center><img src="assets/image/jurusan/3.png" class="img-fluid" alt="" width="70" height="70">
+              <h4>IPS (Ilmu Pegetahuan Sosial)</h4></center>
+            </div>
+          </div>
+        </div>
+      </div>
+         
  <footer>
     <div class="gradient">
         <div class="container wow fadeIn">
