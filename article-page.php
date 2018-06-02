@@ -98,14 +98,14 @@ $tampil_artikel  = mysqli_query($link,"SELECT  tb_artikel.*, tb_admin.Nama FROM 
                         <div class="date">
                             <span><?php echo $data_artikel['tanggal']?></span>
                         </div>
-                    <div class="view">
+                    <!--<div class="view">
 					       	<span><i class="fa fa-eye"></i>
 					        	187</span>
-                      </div>
+                      </div>-->
                     </div>
                     <div class="post-footer">
                             <div class="photo-admin">
-                                <i class="glyphicon glyphicon-user"></i>
+                                <i class="fa fa-user"></i>
                             </div>
                             <div class="nama-admin">
                                 <?= $data_artikel['Nama'] ?>

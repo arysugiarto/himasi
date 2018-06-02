@@ -113,14 +113,14 @@ $tampil_artikel = mysqli_query($link,"SELECT tb_artikel.*, tb_admin.Nama FROM tb
                             <div class="date">
                                 <span><?php echo $data_artikel['tanggal'] ?></span>
                             </div>
-                            <div class="view">
+                            <!--<div class="view">
 					        			<span><i class="fa fa-eye"></i>
 					        			187</span>
-                            </div>
+                            </div>-->
                         </div>
                         <div class="post-footer">
                             <div class="photo-admin">
-                                <i class="glyphicon glyphicon-user"></i>
+                                <i class="fa fa-user"></i>
                             </div>
                             <div class="nama-admin">
                                 <a href="#" class="name"><?= $data_artikel['Nama'] ?></a>
@@ -350,7 +350,7 @@ $tampil_artikel = mysqli_query($link,"SELECT tb_artikel.*, tb_admin.Nama FROM tb
 
             <nav aria-label="Page navigation">
               <?php
-              $tampil_artikel2     =mysqli_query($link, "SELECT * FROM tb_artikel");
+              $tampil_artikel2   = mysqli_query($link, "SELECT * FROM tb_artikel");
               ?>
                 <ul class="pagination">
                   <li>
@@ -364,12 +364,10 @@ $tampil_artikel = mysqli_query($link,"SELECT tb_artikel.*, tb_admin.Nama FROM tb
                     for ($i=1;$i<=$jmlhalaman;$i++)
                     if ($i != $halaman){
                     ?>
-                    <li><?php echo "<a href=\"blog-page.php?halaman=$i\">$i</a>";?>
+                    <li><?php echo "<a href=\"blog-page.php?halaman=$i\">$i</a>";?></li>
                     <?php } else{ ?>
                     </li>
-                    <li>
-                        <?php echo  "<a href=\"\">$i</a>"; }?>
-                    </li>
+                    <li><?php echo  "<a href=\"\">$i</a>"; }?></li>
                     <li>
                       <a href="#" aria-label="Next">
                             <span aria-hidden="true">&raquo;</span>

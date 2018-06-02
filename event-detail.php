@@ -106,7 +106,7 @@ $tampil_event = mysqli_query($link,"SELECT * FROM tb_event WHERE id_event='$id'"
                     <h5>by <?= $data_event['penyelenggara'] ?></h5>
                     <div class="price"><?= $data_event['sifat'] ?></div>
                     <div class="daftar-event">
-                        <button type="button" class="btn btn-success" style="width: 100%;" id="myBtn">Daftar</a>
+                        <button type="button" class="btn btn-success" style="width: 100%;" id="myBtn<?= $id;?>">Daftar</a>
                     </div>
                 </div>
             </div>
@@ -257,8 +257,7 @@ require_once 'admin/pages/lib/koneksi.php';
 $link=connect();
 
 if(isset($_POST['kirim'])){
-
-
+$id=$_GET['id_admin'];
 $nama=$_POST['nama'];
 $kelas=$_POST['kelas'];
 $asal_sekolah=$_POST['asal'];
@@ -284,7 +283,7 @@ else{
       <div class="modal-content">
         <div class="modal-header" style="padding:35px 50px;">
           <button type="button" class="close" data-dismiss="modal">&times;</button>
-          <h4><span class="glyphicon glyphicon-edit" id="myBtn" data-target="#Edit_Kelas" data-toggle="modal" data-id="<?php echo  $kelas['id_kelas']; ?>"></span>Daftar Event</h4>
+          <h4><span class="glyphicon glyphicon-edit" id="myBtn<?php echo $id;?>" ></span>Daftar Event</h4>
         </div>
         <div class="modal-body" style="padding:40px 50px;">
          <form action='' method="post">
