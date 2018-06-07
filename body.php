@@ -15,6 +15,7 @@ $link = connect();
 <?php
 $tampil = mysqli_query($link,"SELECT * FROM tb_tampilan");
 ?>
+
 <div class="hima-header wow fadeIn">
     <div class="image-gradient">
         <div class="container">
@@ -22,7 +23,7 @@ $tampil = mysqli_query($link,"SELECT * FROM tb_tampilan");
             <div class="himaheader-inner">
                 <h1 class="wow bounceIn" data-wow-delay=".2s">MADRASAH ALIYAH NEGERI 3 KABUPATEN SUKABUMI</h2>
                 <h2 class="wow bounceIn" data-wow-delay=".3s">"Madrasah lebih baik lebih baik Madrasah"</h2>
-                <a href="" type="button" class="btn btn-default wow bounceIn" data-wow-delay=".4s">Selanjutnya</a>
+                <a href="#tentang" type="button" class="btn btn-default wow bounceIn" data-wow-delay=".4s">Selanjutnya</a>
                 <div class="arrow animated infinite fadeInDown">
                     <img src="assets/image/download.png" width="30">
                 </div>
@@ -135,9 +136,9 @@ $tampil_event = mysqli_query($link,"SELECT * FROM tb_event ORDER BY id_event DES
                             </div>
 
                             <div class="post-footer">
-                                <div class="photo-admin">
+                                <!--<div class="photo-admin">
                                     <img src="assets/image/" class="img-admin" width="15" height="15">
-                                </div>
+                                </div>-->
                                 <div class="nama-admin">
                                     <a href="#" class="name"></a>
                                 </div>
@@ -168,9 +169,9 @@ $tampil_event = mysqli_query($link,"SELECT * FROM tb_event ORDER BY id_event DES
                                </div>
 
                                <div class="post-footer">
-                                   <div class="photo-admin">
+                                  <!-- <div class="photo-admin">
                                        <img src="assets/image/" class="img-admin" width="15" height="15">
-                                   </div>
+                                   </div>-->
                                    <div class="nama-admin">
                                        <a href="#" class="name"></a>
                                    </div>
@@ -253,8 +254,26 @@ $tampil_galeri = mysqli_query($link,"SELECT * FROM tb_galeri ORDER  BY id_galeri
                         <iframe width="100%" height="200" src="https://www.youtube.com/embed/xTNatFicFA4" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
                         </div>
                     </div>
+                        
+                    </div>
                 </div>
             </div>
         </div>
     </div> <!-- end kesan pesan -->
 </body>
+<script>
+    $(document).ready(function(){
+	$(window).scroll(function(){
+		if ($(window).scrollTop() > 100) {
+			$('#tombolScrollTop').fadeIn();
+		} else {
+			$('#tombolScrollTop').fadeOut();
+		}
+	});
+});
+
+function scrolltotop()
+{
+	$('html, body').animate({scrollTop : 0},500);
+}
+</script>

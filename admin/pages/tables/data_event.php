@@ -130,6 +130,7 @@ if (isset($_SESSION['username'])) {
                                             <td><?php echo $data_event['tanggal_event'] ?></td>
                                             <td>
                                                 <a href="event_update.php?Id=<?= $data_event['id_event']?>"><button class="btn btn-info btn-sm"><i class="glyphicon glyphicon-edit"></i> Edit</button></a>
+                                                <a href="peserta_event.php?Id=<?= $data_event['id_event']?>"><button class="btn btn-success btn-sm"><i class="glyphicon glyphicon-edit"></i> Detail</button></a>
                                                 <a href="delete_event.php?id_event=<?= $data_event['id_event']?>"><button class="btn btn-danger btn-sm"><i class="glyphicon glyphicon-trash"></i> Hapus</button></a>
                                             </td>
                                         </tr>

@@ -7,6 +7,10 @@
  */
 ?>
 <footer>
+    <br>
+<div class="social-widget col-md-1 " style="float:right;" >
+        <button type="button"  id="tombolScrollTop" class="btn btn-success" onclick="scrolltotop()"><i class="fa fa-chevron-up"></i>Up</button>
+</div>
     <div class="gradient">
         <div class="container wow fadeIn">
             <div class="row">

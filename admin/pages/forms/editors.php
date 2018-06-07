@@ -138,17 +138,13 @@ if (isset($_SESSION['username'])) {
                                         <br>
                                             <input size="30" type="radio" name="kategori" value="Pendidikan">pendidikan
                                             <input size="30" type="radio" name="kategori" value="berita">Berita
-                                        <!--<select class="form-control" name="kategori">
-                                          <option value="pendidikan">Pendidikan</option>
-                                          <option value="berita">Berita</option>
-                                        </select>-->
                                       </td>
                                     </tr>
                                 </table>
                                 <br>
-                                <textarea id="summernote" name="artikel" rows="10" cols="80"></textarea>
+                                <textarea name="isiartikel" rows="10" cols="80" id="summernote"></textarea>
                                 <br>
-                                <button type="submit"  class="btn btn-flat"><i class="fa fa-send"></i>Send</button>
+                                <button type="submit" class="btn btn-flat"><i class="fa fa-send"></i>Send</button>
                             </form>
                         </div>
                         <div>

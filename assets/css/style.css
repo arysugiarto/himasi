@@ -745,7 +745,7 @@ footer .footer-col a {
 	letter-spacing: 1px;
 }
 footer .footer-col a:hover {
-	color: #FF5216;
+	color: rgb(252, 247, 245);
 }
 footer .footer-col p {
 	font-size: 14px;

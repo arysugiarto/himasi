@@ -133,73 +133,63 @@ if (isset($_SESSION['username'])) {
                                       while ($data_event=mysqli_fetch_array($tampil_event)){
                                       ?>
                                         <tr>
-                                            <td>
-                                            <label>Judul Event</label>
-                                            <input  class="form-control" type="text" name="judul_event" size="150" placeholder="Judul Event" value="<?php echo $data_event['judul_event']?>" >
-                                            </td>
+                                        <td><label>Judul Event</label></td>
                                         </tr>
-                                        <br>
                                         <tr>
-                                            <td>
-                                            <label>Tanggal Event</label>
-                                            <input  class="form-control" type="date" name="tanggal_event" size="50"  placeholder="" value="<?php echo $data_event['tanggal_event']?>">
-                                            </td>
+                                        <td><input  class="form-control" type="text" name="judul_event" size="150" placeholder="Judul Event" value="<?php echo $data_event['judul_event']?>" ></td>
                                         </tr>
-                                        <br>
+
                                         <tr>
-                                            <td>
-                                            <label>Waktu Event</label>
-                                            <br>
-                                            Waktu Mulai<input  class="form-control" type="time" name="waktu" size="50" placeholder="" value="<?php echo $data_event['waktu']?>">
-                                          </td>
-                                          </tr>
-                                          <tr>
-                                          <td> Waktu Selesai <input  class="form-control" type="time" name="waktu2" size="50" placeholder="" value="<?php echo $data_event['waktu_selesai']?>"></td>
+                                        <td>
+                                        <label>Tanggal Event</label>
+                                        <input  class="form-control" type="date" name="tanggal_event" size="50"  placeholder="" value="<?php echo $data_event['tanggal_event']?>">
+                                        </td>
+                                      </tr>
+                                        <tr>
+                                            <td><label>Waktu Mulai-Selesai</label></td>
                                         </tr>
-                                        <br>
+                                        <tr class="col-md-6">
+                                            <td ><input  class="form-control" type="time" name="waktu" size="50" placeholder="" value="<?php echo $data_event['waktu']?>" ></td>
+                                            <td><input  class="form-control" type="time" name="waktu2" size="50" placeholder="" value="<?php echo $data_event['waktu_selesai']?>"></td>
+                                        </tr>
                                         <tr>
-                                            <td>
-                                            <label>Event Bersifat</label><br>
-                                      <select class="form-control" name="sifat" value="<?php echo $data_event['sifat']?>">
+                                        <td><label>Event Bersifat</label></td>
+                                        </tr>
+                                        <tr>
+                                        <td>
+                                        <select class="form-control" name="sifat" value="<?php echo $data_event['sifat']?>">
                                         <option value="Free">Free</option>
                                         <option value="Bayar">Bayar</option>
-                                      </select>
-
-                                        </tr>
-                                        <br>
-                                        <tr>
-                                            <td>
-                                            <label>Harga Tiket</label>
-                                            <input  class="form-control" type="text" name="tiket" size="150" placeholder="Harga Boleh kosong bila event bersifat Free" value="<?php echo $data_event['harga_tiket']?>">
-                                        </tr>
-                                        <br>
-                                        <tr>
-                                            <td>
-                                            <label>Tempat Event</label>
-                                         <input  class="form-control" type="text" name="tempat_event" size="150" placeholder="Tempat Event"  value="<?php echo $data_event['tempat_event']?>">
-                                        </tr>
-                                      <br>
-                                      <tr>
-                                          <td>
-                                          <label>Penyelenggara Event</label>
-                                          <input  class="form-control" type="text" name="by" size="150" placeholder="" value="<?php echo $data_event['penyelenggara']?>">
-                                          </td>
-                                      </tr>
-                                        <br>
-                                        <tr>
-                                            <td>
-                                                <label>Upload Gambar</label>
-                                            <input class="form-control" type="file" name="image" >
-                                            </td>
-                                        </tr>
-                                    <br>
-                                    <tr>
-                                        <td>
-                                        <label>Deskripsi Event</label>
-                                        <textarea id="summernote" name="artikel_event" rows="10" cols="80" value="<?php echo $data_event['artikel_event']?>"></textarea>
+                                        </select>
                                         </td>
-                                        <br>
-                                    </tr>
+                                        </tr>
+
+                                        <tr>
+                                        <td><label>Harga Tiket</label></td>
+                                        <tr>
+                                        <td><input  class="form-control" type="text" name="tiket" size="150" placeholder="Harga Boleh kosong bila event bersifat Free" value="<?php echo $data_event['harga_tiket']?>"></td>
+                                        </tr>
+
+                                        <tr>
+                                        <td><label>Tempat Event</label></td>
+                                        <tr>
+                                        <td><input  class="form-control" type="text" name="tempat_event" size="150" placeholder="Tempat Event"  value="<?php echo $data_event['tempat_event']?>"></td>
+                                        </tr>
+
+                                        <tr>
+                                        <td><label>Penyelenggara Event</label></td>
+                                        <tr><td><input  class="form-control" type="text" name="by" size="150" placeholder="" value="<?php echo $data_event['penyelenggara']?>"></td></tr>
+
+                                        <tr>
+                                        <td><label>Upload Gambar</label></td>
+                                        </tr>
+                                        <tr><td><input class="form-control" type="file" name="image" ></td></tr>
+
+                                        <tr>
+                                        <td><label>Deskripsi Event</label></td>
+                                        </tr>
+                                        <tr><td><textarea id="summernote" name="artikel_event" rows="10" cols="80" value="<?php echo $data_event['artikel_event']?>"></textarea></td></tr>
+
                                     <input type="hidden" name="Id" value="<?php echo $data_event['id_event']?>">
                                   <?php } ?>
                                     </table>

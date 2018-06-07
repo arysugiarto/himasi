@@ -7,11 +7,17 @@
  */
  require_once 'admin/pages/lib/koneksi.php';
  $link = connect();
- $id = $_GET['id'];
+ if(isset($_GET['id'])){
+    $id = $_GET['id'];
+    
+ }
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<link rel="icon" href="assets/image/logoman.png">
+
 <title>MAN 3 SUKABUMI</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
@@ -33,6 +39,7 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
 
 </head>
+
 <body>
 <!-- ini bagian header yang ke-dua -->
 <nav class="navbar navbar-default navbar-default-2 wow fadeIn">
@@ -53,7 +60,6 @@
                 <li><a href="index.php">home</a></li>
                 <li><a href="tentang.php" >tentang </a></li>
                 <li> <a href="gallery-page.php" >gallery </a></li>
-                <li><a href="#">kontak</a></li>
                 <li><a href="event-page.php">events</a></li>
                 <li><a href="blog-page.php">blog</a></li>
             </ul>
@@ -95,7 +101,7 @@ $tampil_event = mysqli_query($link,"SELECT * FROM tb_event WHERE id_event='$id'"
         <div class="row">
             <div class="col-xs-12 col-md-8">
                 <div class="event-poster thumbnail">
-                    <img src="admin/pages/forms/img/img_event/<?= $data_event['gambar_event']?>" alt="dalih" class="blog-image">
+                    <img src="admin/pages/forms/img/img_event/<?= $data_event['gambar_event']?>" class="blog-image">
                 </div>
             </div>
 
@@ -106,7 +112,7 @@ $tampil_event = mysqli_query($link,"SELECT * FROM tb_event WHERE id_event='$id'"
                     <h5>by <?= $data_event['penyelenggara'] ?></h5>
                     <div class="price"><?= $data_event['sifat'] ?></div>
                     <div class="daftar-event">
-                        <button type="button" class="btn btn-success" style="width: 100%;" id="myBtn<?= $id;?>">Daftar</a>
+                        <button type="button" class="btn btn-success" style="width: 100%;" id="myBtn">Daftar</a>
                     </div>
                 </div>
             </div>
@@ -142,21 +148,25 @@ $tampil_event = mysqli_query($link,"SELECT * FROM tb_event WHERE id_event='$id'"
 </div>
 
 <footer>
+<br>
+<div class="social-widget col-md-1 " style="float:right;" >
+        <button type="button"  id="tombolScrollTop" class="btn btn-success" onclick="scrolltotop()"><i class="fa fa-chevron-up"></i>Up</button>
+</div>
     <div class="gradient">
         <div class="container wow fadeIn">
             <div class="row">
                 <div class="col-md-4 col-xs-6 footer-col">
                     <ul>
                         <li class="head-list">Gallery</li>
-                        <li><a href="">Alumni</a></li>
                         <li><a href="">Kegiatan</a></li>
                     </ul>
                 </div>
                 <div class="col-md-4 col-xs-6 footer-col">
                     <ul>
                         <li class="head-list">Tentang</li>
-                        <li><a href="">Sejarah</a></li>
                         <li><a href="">Visi Misi</a></li>
+                        <li><a href="">Fasilitas</a></li>
+                        <li><a href="">Jurusan</a></li>
                     </ul>
                 </div>
                 <div class="col-md-4 col-xs-12 footer-col">
@@ -184,6 +194,22 @@ $tampil_event = mysqli_query($link,"SELECT * FROM tb_event WHERE id_event='$id'"
 <script type="text/javascript" src="assets/js/wow.min.js"></script>
 <script src="assets/web/assets/jquery/jquery.min.js"></script>
 
+<script>
+    $(document).ready(function(){
+	$(window).scroll(function(){
+		if ($(window).scrollTop() > 100) {
+			$('#tombolScrollTop').fadeIn();
+		} else {
+			$('#tombolScrollTop').fadeOut();
+		}
+	});
+});
+
+function scrolltotop()
+{
+	$('html, body').animate({scrollTop : 0},500);
+}
+</script>
 <!-- script slick center -->
 <script type="text/javascript">
     $('.responsive').slick({
@@ -235,92 +261,6 @@ $tampil_event = mysqli_query($link,"SELECT * FROM tb_event WHERE id_event='$id'"
             }
         }
     );
-</script>
-
-<meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-<style>
-  .modal-header, h4, .close {
-      background-color: #5cb85c;
-      color:white !important;
-      text-align: center;
-      font-size: 30px;
-  }
-  .modal-footer {
-      background-color: #f9f9f9;
-  }
-  </style>
- <?php
-require_once 'admin/pages/lib/koneksi.php';
-$link=connect();
-
-if(isset($_POST['kirim'])){
-$id=$_GET['id_admin'];
-$nama=$_POST['nama'];
-$kelas=$_POST['kelas'];
-$asal_sekolah=$_POST['asal'];
-$email=$_POST['email'];
-$jurusan=$_POST['jurusan'];
-
-$insert = "INSERT INTO tb_dafevent(id_dafevent,nama,kelas,asal_sekolah,email,jurusan) values('','$nama','$kelas','$asal_sekolah','$email','$jurusan')";
-$kirim = mysqli_query($link, $insert);
-if ($kirim){
-    echo "<script>alert('berhasil cuuuu');</script>";
-    header("location:event-detail.php");
-}
-else{
-    header("location:event-detail.php");
-}
-}
-?>
-
-<div class="modal fade" id="myModal" role="dialog">
-    <div class="modal-dialog">
-    
-      <!-- Modal content-->
-      <div class="modal-content">
-        <div class="modal-header" style="padding:35px 50px;">
-          <button type="button" class="close" data-dismiss="modal">&times;</button>
-          <h4><span class="glyphicon glyphicon-edit" id="myBtn<?php echo $id;?>" ></span>Daftar Event</h4>
-        </div>
-        <div class="modal-body" style="padding:40px 50px;">
-         <form action='' method="post">
-         
-          <div class="form-group">
-              <label for="usrname"><span class="glyphicon glyphicon-user"></span> Nama</label>
-              <input type="text" class="form-control" id="nama" name="nama" placeholder="Enter Nama">
-            </div>
-            <div class="form-group">
-              <label for="usrname"><span class="glyphicon glyphicon-home"></span> Kelas</label>
-              <input type="text" class="form-control" name="kelas" id="usrname" placeholder="Enter email">
-            </div>
-            <div class="form-group">
-              <label for="psw"><span class="fa fa-university"></span> Asal Sekolah</label>
-              <input type="text" class="form-control" name="asal" id="psw" placeholder="Enter password">
-            </div><div class="form-group">
-              <label for="psw"><span class="fa fa-peoplle"></span> Jurusan</label>
-              <input type="text" required class="form-control" name="jurusan" id="psw" placeholder="Enter password">
-            </div>
-            <div class="form-group">
-              <label for="psw"><span class="fa fa-envelope"></span> Email</label>
-              <input type="email" required class="form-control" name="email" id="psw" placeholder="Enter password">
-            </div>
-              <button type="submit" name="kirim" class="btn btn-success btn-block">Daftar</button>
-        </form>
-        </div>
-      </div>
-      
-    </div>
-  </div> 
-</div>
-<script>
-$(document).ready(function(){
-    $("#myBtn").click(function(){
-        $("#myModal").modal();
-    });
-});
 </script>
 </body>
 </html>

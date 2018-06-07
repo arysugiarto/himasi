@@ -9,14 +9,15 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>MAN 3 SUKABUMI</title>
+    <link rel="icon" href="assets/image/logoman.png">
+
+    <title>MAN 3 SUKABUMI </title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- Chrome, Firefox OS, Opera and Vivaldi -->
     <meta name="theme-color" content="#0575e6">
-
-    <!-- Bootstrap CSS -->
+  
     <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.10.0/baguetteBox.min.css">
 
@@ -51,7 +52,6 @@
                 <li><a href="index.php">home</a></li>
                 <li> <a href="tentang.php" >tentang</a></li>
                 <li><a href="gallery-page.php" >gallery </a></li>
-                <li><a href="#">kontak</a></li>
                 <li><a href="event-page.php">events</a></li>
                 <li><a href="blog-page.php">blog</a></li>
             </ul>

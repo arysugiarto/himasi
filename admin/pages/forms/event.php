@@ -119,77 +119,66 @@ if (isset($_SESSION['username'])) {
                                 <form action="event_proses.php" method="post" enctype="multipart/form-data">
                                     <table>
                                         <tr>
-                                            <td>
-                                            <label>Judul Event</label>
-                                            <input  class="form-control" type="text" name="judul_event" size="150" placeholder="Judul Event" >
-                                            </td>
+                                        <td><label>Judul Event</label></td>
                                         </tr>
-                                        <br>
                                         <tr>
-                                            <td>
-                                            <label>Tanggal Event</label>
-                                            <input  class="form-control" type="date" name="tanggal_event" size="50"  placeholder="">
-                                            </td>
+                                        <td><input  class="form-control" type="text" name="judul_event" size="150" placeholder="Judul Event" value="" ></td>
                                         </tr>
-                                        <br>
+
                                         <tr>
-                                            <td>
-                                            <label>Waktu Event</label>
-                                            <br>
-                                            Waktu Mulai<input  class="form-control" type="time" name="waktu" size="50" placeholder="">
-                                          </td>
-                                          </tr>
-                                          <tr>
-                                          <td> Waktu Selesai <input  class="form-control" type="time" name="waktu2" size="50" placeholder=""></td>
+                                        <td>
+                                        <label>Tanggal Event</label>
+                                        <input  class="form-control" type="date" name="tanggal_event" size="50"  placeholder="" value="">
+                                        </td>
+                                      </tr>
+                                        <tr>
+                                            <td><label>Waktu Mulai-Selesai</label></td>
                                         </tr>
-                                        <br>
+                                        <tr class="col-md-6">
+                                            <td ><input  class="form-control" type="time" name="waktu" size="50" placeholder="" value="" ></td>
+                                            <td><input  class="form-control" type="time" name="waktu2" size="50" placeholder="" value=""></td>
+                                        </tr>
                                         <tr>
-                                            <td>
-                                            <label>Event Bersifat</label><br>
-                                      <select class="form-control" name="sifat">
+                                        <td><label>Event Bersifat</label></td>
+                                        </tr>
+                                        <tr>
+                                        <td>
+                                        <select class="form-control" name="sifat" value="">
                                         <option value="Free">Free</option>
                                         <option value="Bayar">Bayar</option>
-                                      </select>
-
-                                        </tr>
-                                        <br>
-                                        <tr>
-                                            <td>
-                                            <label>Harga Tiket</label>
-                                            <input  class="form-control" type="text" name="tiket" size="150" placeholder="Harga Boleh kosong bila event bersifat Free">
-                                        </tr>
-                                        <br>
-                                        <tr>
-                                            <td>
-                                            <label>Tempat Event</label>
-                                         <input  class="form-control" type="text" name="tempat_event" size="150" placeholder="Tempat Event" >
-                                        </tr>
-                                      <br>
-                                      <tr>
-                                          <td>
-                                          <label>Penyelenggara Event</label>
-                                          <input  class="form-control" type="text" name="by" size="150" placeholder="">
-                                          </td>
-                                      </tr>
-                                        <br>
-                                        <tr>
-                                            <td>
-                                                <label>Upload Gambar</label>
-                                            <input class="form-control" type="file" name="image" >
-                                            </td>
-                                        </tr>
-                                    <br>
-                                    <tr>
-                                        <td>
-                                        <label>Deskripsi Event</label>
-                                        <textarea id="summernote" name="artikel_event" rows="10" cols="80"></textarea>
+                                        </select>
                                         </td>
-                                        <br>
-                                    </tr>
+                                        </tr>
 
+                                        <tr>
+                                        <td><label>Harga Tiket</label></td>
+                                        <tr>
+                                        <td><input  class="form-control" type="text" name="tiket" size="150" placeholder="Harga Boleh kosong bila event bersifat Free" value=""></td>
+                                        </tr>
+
+                                        <tr>
+                                        <td><label>Tempat Event</label></td>
+                                        <tr>
+                                        <td><input  class="form-control" type="text" name="tempat_event" size="150" placeholder="Tempat Event"  value=""></td>
+                                        </tr>
+
+                                        <tr>
+                                        <td><label>Penyelenggara Event</label></td>
+                                        <tr><td><input  class="form-control" type="text" name="by" size="150" placeholder="" value=""></td></tr>
+
+                                        <tr>
+                                        <td><label>Upload Gambar</label></td>
+                                        </tr>
+                                        <tr><td><input class="form-control" type="file" name="image" ></td></tr>
+
+                                        <tr>
+                                        <td><label>Deskripsi Event</label></td>
+                                        </tr>
+                                        <tr><td><textarea id="summernote" name="artikel_event" rows="10" cols="80" value=""></textarea></td></tr>
+
+                                    <input type="hidden" name="Id" >
                                     </table>
                                     <button type="submit"  class="btn btn-flat"><i class="fa fa-send"></i>Send</button>
-
                                 </form>
                             </div>
                             <div>

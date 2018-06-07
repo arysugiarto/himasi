@@ -9,6 +9,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<link rel="icon" href="assets/image/logoman.png">
+
 <title>MAN 3 SUKABUMI</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
@@ -55,7 +57,6 @@
                 <li class="dropdown">
                 <a href="gallery-page.php" >gallery </a>
                 </li>
-                <li><a href="#">kontak</a></li>
                 <li><a href="event-page.php">events</a></li>
                 <li><a href="blog-page.php">blog</a></li>
             </ul>
@@ -97,7 +98,7 @@ $tampil_galeri = mysqli_query($link,"SELECT * FROM tb_galeri ORDER  BY id_galeri
     <div class="">
   
     <div class="media-container-row" id="tentang">
-            <div class="title col-0 col-md-0">
+           <!-- <div class="title col-0 col-md-0">
                 <center>
                 <div class=""><br>
                 <h3>Visi</h3>
@@ -115,7 +116,7 @@ $tampil_galeri = mysqli_query($link,"SELECT * FROM tb_galeri ORDER  BY id_galeri
                 </div>
               </center>
             </div>
-        </div>
+        </div>-->
     </div>
 </div>
 </div>
@@ -168,23 +169,26 @@ $tampil_galeri = mysqli_query($link,"SELECT * FROM tb_galeri ORDER  BY id_galeri
         </div>
       </div>
          
- <footer>
+      <footer>
+<br>
+<div class="social-widget col-md-1 " style="float:right;" >
+        <button type="button"  id="tombolScrollTop" class="btn btn-success" onclick="scrolltotop()"><i class="fa fa-chevron-up"></i>Up</button>
+</div>
     <div class="gradient">
         <div class="container wow fadeIn">
             <div class="row">
                 <div class="col-md-4 col-xs-6 footer-col">
                     <ul>
                         <li class="head-list">Gallery</li>
-                        <li><a href="">Alumni</a></li>
                         <li><a href="">Kegiatan</a></li>
                     </ul>
                 </div>
                 <div class="col-md-4 col-xs-6 footer-col">
                     <ul>
                         <li class="head-list">Tentang</li>
-                        <li><a href="">Sejarah</a></li>
-                        <li><a href="">Ketua Hima</a></li>
                         <li><a href="">Visi Misi</a></li>
+                        <li><a href="">Fasilitas</a></li>
+                        <li><a href="">Jurusan</a></li>
                     </ul>
                 </div>
                 <div class="col-md-4 col-xs-12 footer-col">
@@ -212,6 +216,22 @@ $tampil_galeri = mysqli_query($link,"SELECT * FROM tb_galeri ORDER  BY id_galeri
 <script type="text/javascript" src="assets/js/wow.min.js"></script>
 <script src="assets/web/assets/jquery/jquery.min.js"></script>
 
+<script>
+    $(document).ready(function(){
+	$(window).scroll(function(){
+		if ($(window).scrollTop() > 100) {
+			$('#tombolScrollTop').fadeIn();
+		} else {
+			$('#tombolScrollTop').fadeOut();
+		}
+	});
+});
+
+function scrolltotop()
+{
+	$('html, body').animate({scrollTop : 0},500);
+}
+</script>
 <!-- script slick center -->
 <script type="text/javascript">
     $('.responsive').slick({
