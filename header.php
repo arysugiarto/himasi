@@ -11,7 +11,7 @@
 <head>
     <link rel="icon" href="assets/image/logoman.png">
 
-    <title>MAN 3 SUKABUMI </title>
+    <title>MAN 3 Sukabumi </title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -50,7 +50,7 @@
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav">
                 <li><a href="index.php">home</a></li>
-                <li> <a href="tentang.php" >tentang</a></li>
+                <li> <a href="tentang.php" >Fasilitas/Jurusan </a></li>
                 <li><a href="gallery-page.php" >gallery </a></li>
                 <li><a href="event-page.php">events</a></li>
                 <li><a href="blog-page.php">blog</a></li>

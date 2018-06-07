@@ -8,9 +8,7 @@
 ?>
 <footer>
     <br>
-<div class="social-widget col-md-1 " style="float:right;" >
-        <button type="button"  id="tombolScrollTop" class="btn btn-success" onclick="scrolltotop()"><i class="fa fa-chevron-up"></i>Up</button>
-</div>
+
     <div class="gradient">
         <div class="container wow fadeIn">
             <div class="row">
@@ -31,9 +29,13 @@
                     <a class="navbar-hima" href="#"><img src="assets/image/logoman.png" width="50">MAN 3 SUKABUMi</a>
                     <p>Jl. Lapang Lodaya Setra No. 47, Citanglar, Surade</p>
                 </div>
+                <div class="social-widget col-md-0 " style="float:right;" >
+                    <button type="button"  id="tombolScrollTop" class="btn btn-success" onclick="scrolltotop()"><i class="fa fa-chevron-up"></i></button>
+                 </div>
                 <div class="col-md-12 developer">
                     <p>&copy; 2018. All Rights Reserved. Developed by </a></p>
                 </div>
+               
             </div>
         </div>
     </div>

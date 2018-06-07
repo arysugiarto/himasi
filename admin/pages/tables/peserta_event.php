@@ -85,13 +85,13 @@ if (isset($_SESSION['username'])) {
             <!-- Content Header (Page header) -->
             <section class="content-header">
                 <h1>
-                    Data Event
+                    Peserta Event
                     <small></small>
                 </h1>
                 <ol class="breadcrumb">
                     <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
                     <li><a href="#">Tables</a></li>
-                    <li class="active">Data Event</li>
+                    <li class="active">Peserta</li>
                 </ol>
             </section>
             <?php

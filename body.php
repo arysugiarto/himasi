@@ -97,7 +97,7 @@ $tampil_event = mysqli_query($link,"SELECT * FROM tb_event ORDER BY id_event DES
                 $file = 'counter.txt';
                 if(file_exists($file)){
                     $file_open = fopen($file, "r");
-                    $cek = trim(fgets($file_open, 255));
+                    $cek = trim(fgets($file_open, 555));
                     $cek++;
                 }  else {
                     $cek = 1;

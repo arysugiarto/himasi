@@ -10,7 +10,7 @@
 <head>
 <link rel="icon" href="assets/image/logoman.png">
 
-    <title>MAN 3 SUKABUMI</title>
+    <title>MAN 3 Sukabumi</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -50,7 +50,7 @@
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav navbar-right">
                 <li><a href="index.php">home</a></li>
-                <li><a href="tentang.php" >tentang </a></li>
+                <li><a href="tentang.php" >Fasilitas/Jurusan  </a></li>
                 <li> <a href="gallery-page.php" >gallery </a></li>
                 <li><a href="event-page.php">events</a></li>
                 <li><a href="blog-page.php">blog</a></li>
@@ -248,10 +248,6 @@ $tampil_event = mysqli_query($link,"SELECT * FROM tb_event ORDER  BY id_event DE
 </div>
 
 <footer>
-<br>
-<div class="social-widget col-md-1 " style="float:right;" >
-        <button type="button"  id="tombolScrollTop" class="btn btn-success" onclick="scrolltotop()"><i class="fa fa-chevron-up"></i>Up</button>
-</div>
     <div class="gradient">
         <div class="container wow fadeIn">
             <div class="row">
@@ -273,6 +269,9 @@ $tampil_event = mysqli_query($link,"SELECT * FROM tb_event ORDER  BY id_event DE
                     <a class="navbar-hima" href="#"><img src="assets/image/logoman.png" width="50">MAN 3 SUKABUMi</a>
                     <p>Jl. Lapang Lodaya Setra No. 47, Citanglar, Surade</p>
                 </div>
+                <div class="social-widget col-md-0 " style="float:right;" >
+                    <button type="button"  id="tombolScrollTop" class="btn btn-success" onclick="scrolltotop()"><i class="fa fa-chevron-up"></i></button>
+                 </div>
                 <div class="col-md-12 developer">
                     <p>&copy; 2018. All Rights Reserved. Developed by </a></p>
                 </div>
